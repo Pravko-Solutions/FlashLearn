@@ -5,11 +5,27 @@
    ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
 ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
-FlashLearn is a Python library designed to ensure that every Large Language Model (LLM) response is always valid JSON. Whether you are classifying, summarizing, rewriting, or even performing multi-step data transformations, FlashLearn provides a stable, predictable output format so you can store and chain your results without worrying about malformed text or inconsistent formats.
+FlashLearn simplifies the use of LLMs for classic machine-learning tasks by providing an end-to-end toolkit. It enables reliable chaining and storage for tasks such as classification, summarization, rewriting, and multi-step transformations at scale.
 
-- Ready to go examples ([Click](examples))
-- Rich library of 200+ prebuilt skill definitions ([Click](flashlearn/skills/toolkit))
-- Dynamic skills classes ([Click](flashlearn/skills))
+```bash
+pip install flashlearn
+```
+
+```python
+import os
+from openai import OpenAI
+from flashlearn.skills.classification import ClassificationSkill
+
+os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
+data = [{"message": "Where is my refund?"}, {"message": "My product was damaged!"}]
+skill = ClassificationSkill(model_name="gpt-4o-mini", client=OpenAI(), categories=["billing","product issue"], system_prompt="Classify the request.")
+tasks = skill.create_tasks(data)
+print(skill.run_tasks_in_parallel(tasks))
+```
+
+## Target audience
+- Anyone needing LLM-based data transformations at scale
+- Data scientists tired of building specialized models with insufficient data
 
 [![Support & Consulting](https://img.shields.io/badge/Support%20%26%20Consulting-Click%20Here-brightgreen)](https://calendly.com/flashlearn)
 
