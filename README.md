@@ -11,6 +11,7 @@ FlashLearn simplifies the use of LLMs for classic machine-learning tasks by prov
 pip install flashlearn
 ```
 
+## Classify text in 10 lines of code
 ```python
 import os
 from openai import OpenAI
