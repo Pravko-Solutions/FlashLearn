@@ -1,0 +1,32 @@
+{
+  "skill_class": "ClassificationSkill",
+  "model_name": "gpt-4o-mini",
+  "system_prompt": "We want to classify pictures in listed categories",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "categorize_text",
+      "description": "Classify text into exactly 1 category out of ['cute animals', 'playfulness', 'sunglasses', 'joyful companionship'].",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "string",
+            "enum": [
+              "cute animals",
+              "playfulness",
+              "sunglasses",
+              "joyful companionship"
+            ],
+            "description": "A chosen category from the provided set."
+          }
+        },
+        "required": [
+          "categories"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

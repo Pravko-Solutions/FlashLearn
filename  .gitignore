@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+../.venv/
+../build/
+flashlearn/dist/
+*.egg-info/
+../dist/
+../todo.txt
+../flashlearn.egg-info/

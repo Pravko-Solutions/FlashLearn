@@ -1,0 +1,29 @@
+{
+  "skill_class": "ClassificationSkill",
+  "system_prompt": "We want to classify images by what is in the picture.",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "categorize_text",
+      "description": "Classify text into exactly 1 category out of ['cat', 'dog'].",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "type": "string",
+            "enum": [
+              "cat",
+              "dog"
+            ],
+            "description": "A chosen category from the provided set."
+          }
+        },
+        "required": [
+          "categories"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

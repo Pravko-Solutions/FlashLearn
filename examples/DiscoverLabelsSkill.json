@@ -1,0 +1,28 @@
+{
+  "skill_class": "DiscoverLabelsSkill",
+  "system_prompt": "Uncover hidden themes in this movie reviews. Be funny",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "infer_labels",
+      "description": "Infer some labels for an entire dataset.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of label strings summarizing the entire dataset."
+          }
+        },
+        "required": [
+          "labels"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
