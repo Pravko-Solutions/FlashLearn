@@ -1,4 +1,5 @@
-# FlashLearn  
+# FlashLearn - Never train another ML model again.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
    ![Pure Python](https://img.shields.io/badge/Python-Pure-blue)
    ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
