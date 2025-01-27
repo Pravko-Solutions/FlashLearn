@@ -1,20 +1,85 @@
+Metadata-Version: 2.2
+Name: flashlearn
+Version: 1.0.0
+Summary: Never train another ML model again
+Author-email: Gal Giacomelli <info@clerkly.co>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: aiohappyeyeballs>=2.4.4
+Requires-Dist: pillow>=11.1.0
+Requires-Dist: aiohttp>=3.11.11
+Requires-Dist: aiosignal>=1.3.2
+Requires-Dist: annotated-types>=0.7.0
+Requires-Dist: anyio>=4.8.0
+Requires-Dist: attrs>=24.3.0
+Requires-Dist: certifi>=2024.12.14
+Requires-Dist: charset-normalizer>=3.4.1
+Requires-Dist: click>=8.1.8
+Requires-Dist: colorama>=0.4.6
+Requires-Dist: distro>=1.9.0
+Requires-Dist: filelock>=3.17.0
+Requires-Dist: frozenlist>=1.5.0
+Requires-Dist: fsspec>=2024.12.0
+Requires-Dist: h11>=0.14.0
+Requires-Dist: httpcore>=1.0.7
+Requires-Dist: httpx>=0.27.2
+Requires-Dist: huggingface-hub>=0.27.1
+Requires-Dist: idna>=3.10
+Requires-Dist: importlib_metadata>=8.6.1
+Requires-Dist: Jinja2>=3.1.5
+Requires-Dist: jiter>=0.8.2
+Requires-Dist: joblib>=1.4.2
+Requires-Dist: jsonschema>=4.23.0
+Requires-Dist: jsonschema-specifications>=2024.10.1
+Requires-Dist: kagglehub>=0.3.6
+Requires-Dist: litellm>=1.59.3
+Requires-Dist: MarkupSafe>=3.0.2
+Requires-Dist: multidict>=6.1.0
+Requires-Dist: openai>=1.60.0
+Requires-Dist: packaging>=24.2
+Requires-Dist: propcache>=0.2.1
+Requires-Dist: pydantic>=2.10.5
+Requires-Dist: pydantic_core>=2.27.2
+Requires-Dist: python-dateutil>=2.9.0.post0
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: pytz>=2024.2
+Requires-Dist: PyYAML>=6.0.2
+Requires-Dist: referencing>=0.36.1
+Requires-Dist: regex>=2024.11.6
+Requires-Dist: requests>=2.32.3
+Requires-Dist: rpds-py>=0.22.3
+Requires-Dist: six>=1.17.0
+Requires-Dist: sniffio>=1.3.1
+Requires-Dist: threadpoolctl>=3.5.0
+Requires-Dist: tiktoken>=0.8.0
+Requires-Dist: tokenizers>=0.21.0
+Requires-Dist: tqdm>=4.67.1
+Requires-Dist: typing_extensions>=4.12.2
+Requires-Dist: tzdata>=2025.1
+Requires-Dist: urllib3>=2.3.0
+Requires-Dist: yarl>=1.18.3
+Requires-Dist: zipp>=3.21.0
+
 # FlashLearn  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
    ![Pure Python](https://img.shields.io/badge/Python-Pure-blue)
    ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
 ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
+
 FlashLearn is a Python library designed to ensure that every Large Language Model (LLM) response is always valid JSON. Whether you are classifying, summarizing, rewriting, or even performing multi-step data transformations, FlashLearn provides a stable, predictable output format so you can store and chain your results without worrying about malformed text or inconsistent formats.
 
-- Ready to go examples ([Click](examples))
-- Rich library of 200+ prebuilt skill definitions ([Click](flashlearn/skills/toolkit))
-- Dynamic skills classes ([Click](flashlearn/skills))
+- Zero custom training—use your existing LLM.  
+- Compatible with open-source (e.g., DeepSeek) or commercial (e.g., OpenAI) offerings.  
+- Scalable concurrency to handle from tens to millions of tasks.  
+- A rich library of pre-built skills (classification, rewriting, summarization, etc.).  
 
 [![Support & Consulting](https://img.shields.io/badge/Support%20%26%20Consulting-Click%20Here-brightgreen)](https://calendly.com/flashlearn)
 
 ---
 
-## Key Features 
+## Key Features (Simplified)
 
 - **100% JSON Workflows**: Every response is valid JSON—machine-friendly from the start.  
 - **Scales Easily**: Concurrency and rate limiting for large-scale projects.  
@@ -22,7 +87,7 @@ FlashLearn is a Python library designed to ensure that every Large Language Mode
 - **LearnSkill**: Instant creation of classification/rewriting “skills” from sample data.  
 - **Batch or Real-Time**: Process live data, or batch thousands of tasks.  
 - **Cost Estimation**: Predict token expenditures before running large jobs.  
-- **Skill Library**: 200+ built-in skill definitions ([docs](flashlearn/skills/toolkit)).  
+- **Skill Library**: 200+ built-in skill definitions ([flashlearn/skills/toolkit](flashlearn/skills/toolkit)).  
 - **Multi-Modal**: Handle text, images, and more in consistent JSON pipelines.
 
 ## High-throughput

@@ -7,3 +7,5 @@ flashlearn/dist/
 ../dist/
 ../todo.txt
 ../flashlearn.egg-info/
+/flashlearn.egg-info/
+/dist/
