@@ -1,4 +1,4 @@
-# FlashLearn - Simple & Fast LLM pipelines.
+# FlashLearn - Never train another ML model
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
    ![Pure Python](https://img.shields.io/badge/Python-Pure-blue)
