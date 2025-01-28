@@ -51,7 +51,7 @@ results = skill.run_tasks_in_parallel(tasks)
 print(results)
 ```
 
-## Use predefined skill builders
+### Use predefined skill builders
 ```python
 import os
 from openai import OpenAI
