@@ -1,55 +1,67 @@
 # FlashLearn - Never train another ML model
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-   ![Pure Python](https://img.shields.io/badge/Python-Pure-blue)
-   ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
+![Pure Python](https://img.shields.io/badge/Python-Pure-blue)
+![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
 ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
-FlashLearn simplifies the use of LLMs for classic machine-learning tasks with an end-to-end toolkit. Reliable processing **(1000 calls/min)**, chaining, and storage for llm based tasks, classification, summarization, rewriting, and multi-step transformations at scale.
+FlashLearn provides a familiar machine-learning methodology for incorporating large language models into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks—just like you’d do with any standard ML library, but harnessing the power of LLMs under the hood.
 
-- Examples - [click](/examples)
-- Toolkit for advanced tasks - [click](/flashlearn/skills/toolkit)
-- Customization - [click](/flashlearn/skills/)
+A robust architecture ensures reliable high-throughput requests (up to 1000 calls/min), allowing you to flexibly chain various LLM-based “transformers” and create “pipelines” for your own domain-specific tasks. Build end-to-end flows from raw data to structured outputs in just a few lines of code.
 
+• Examples: [click](/examples)  
+• Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
+• Customization options: [click](/flashlearn/skills/)  
+
+Install:
+--------------------------------------------------------------------------------
 ```bash
 pip install flashlearn
 ```
-### OpenAI, DeepSeek, or 100+ LLMS
+
+--------------------------------------------------------------------------------
+## Supported LLM Providers
+Anywhere you might rely on an ML pipeline component, you can swap in an LLM:
 ```python
-client = OpenAI() # Set in venv
+client = OpenAI()  # This is equivalent to instantiating a pipeline component 
 deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
-flash_learn = FlashLiteLLMClient() # set up keys as os.env, make sure to use openai/MODEL_NAME
+lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
 ```
-### Learning ANYTHING from Sample Data - Text, Voice, & images.
-With just a few examples (or none at all!) learn any new skill with structured outputs and perform any task you imagine.
+
+--------------------------------------------------------------------------------
+## Example: Learning a New “Task” from Sample Data
+Like  fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Provide sample data and instructions, then immediately apply to new inputs.
+
 ```python
 from flashlearn.skills.learn_skill import LearnSkill
 from flashlearn.utils import imdb_reviews_50k
 
 def main():
-    learner = LearnSkill(model_name="gpt-4o-mini" clinet=OpenAI())
+    # Instantiate your pipeline “estimator” or “transformer”
+    learner = LearnSkill(model_name="gpt-4o-mini", clinet=OpenAI())
     data = imdb_reviews_50k(sample=100)
 
     # Provide instructions and sample data for the new skill
     skill = learner.learn_skill(
         data,
-         #client=client,
         task=(
             'Evaluate likelihood to buy my product and write the reason why (on key "reason")'
             'return int 1-100 on key "likely_to_Buy".'
         ),
     )
 
+    # Construct tasks for parallel execution (akin to batch prediction)
     tasks = skill.create_tasks(data)
     results = skill.run_tasks_in_parallel(tasks)
     print(results)
 ```
 
-### Load predefined complex tasks in 3 lines of code
-Toolkit of 200+ predefined skills you can load - [click](/flashlearn/skills/toolkit)
+--------------------------------------------------------------------------------
+## Predefined Complex Pipelines in 3 Lines
+Load prebuilt “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data:
 
 ```python
-# You can pass client to load skill
+# You can pass client to load your pipeline component
 skill = GeneralSkill.load_skill(EmotionalToneDetection)
 tasks = skill.create_tasks([{"text": "Your input text here..."}])
 results = skill.run_tasks_in_parallel(tasks)
@@ -57,7 +69,11 @@ results = skill.run_tasks_in_parallel(tasks)
 print(results)
 ```
 
-### Use predefined skill builders
+--------------------------------------------------------------------------------
+## Single-Step Classification Using Prebuilt Skills
+Classic classification tasks are as straightforward as calling “fit_predict” on a ML estimator:
+• Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
+
 ```python
 import os
 from openai import OpenAI
@@ -65,11 +81,17 @@ from flashlearn.skills.classification import ClassificationSkill
 
 os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 data = [{"message": "Where is my refund?"}, {"message": "My product was damaged!"}]
-skill = ClassificationSkill(model_name="gpt-4o-mini", client=OpenAI(), categories=["billing","product issue"], system_prompt="Classify the request.")
+
+skill = ClassificationSkill(
+    model_name="gpt-4o-mini",
+    client=OpenAI(),
+    categories=["billing","product issue"],
+    system_prompt="Classify the request."
+)
+
 tasks = skill.create_tasks(data)
 print(skill.run_tasks_in_parallel(tasks))
 ```
-
 
 ## Target audience
 - Anyone needing LLM-based data transformations at scale
