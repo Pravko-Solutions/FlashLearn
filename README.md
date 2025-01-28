@@ -14,10 +14,11 @@ FlashLearn simplifies the use of LLMs for classic machine-learning tasks with an
 ```bash
 pip install flashlearn
 ```
-### Use any OpenAI, DeepSeek, or 100+ LLMS
+### OpenAI, DeepSeek, or 100+ LLMS
 ```python
 client = OpenAI() # Set in venv
 deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
+flash_learn = FlashLiteLLMClient() # set up keys as os.env, make sure to use openai/MODEL_NAME
 ```
 ### Learning ANYTHING from Sample Data - Text, Voice, & images.
 With just a few examples (or none at all!) learn any new skill with structured outputs and perform any task you imagine.
