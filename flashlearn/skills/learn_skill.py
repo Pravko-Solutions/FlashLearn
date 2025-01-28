@@ -273,7 +273,8 @@ class LearnSkill:
                 model_name=model_name,
                 function_definition=function_def,
                 system_prompt="Exactly populate the provided function definition",
-                columns=columns
+                columns=columns,
+                client=self.client
             )
             return skill
 

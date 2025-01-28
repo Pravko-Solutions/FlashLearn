@@ -12,10 +12,11 @@ def main():
     #os.environ["OPENAI_API_KEY"] = 'YOUR API KEY'
 
     # Deepseek client
-    #OpenAI(
+    #deep_seek = OpenAI(
         #api_key='YOUR DEEPSEEK API KEY',
         #base_url="https://api.deepseek.com",
     #)
+    client = OpenAI()
     # Step 2: Load sample data (list of dicts with "review" and "sentiment" keys)
     reviews = imdb_reviews_50k(sample=100)
 
@@ -23,7 +24,7 @@ def main():
     skill = ClassificationSkill(
         #model_name="deepseek-chat",
         model_name="gpt-4o-mini",
-        client=OpenAI(),
+        client=client,
         categories=["positive", "negative"],
         max_categories=1,
         system_prompt="We want to classify short movie reviews by sentiment."
