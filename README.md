@@ -15,7 +15,7 @@ FlashLearn simplifies the use of LLMs for classic machine-learning tasks with an
 pip install flashlearn
 ```
 
-### Learning a New ANYTHING from Sample Data
+### Learning ANYTHING from Sample Data - Text, Voice, & images.
 If existing tools or rewrites don’t match your needs, create a new skill from your data examples you will have to provide all relevant data in your input dicts.
 
 ```python
