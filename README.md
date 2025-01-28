@@ -16,8 +16,7 @@ pip install flashlearn
 ```
 
 ### Learning ANYTHING from Sample Data - Text, Voice, & images.
-If existing tools or rewrites don’t match your needs, create a new skill from your data examples you will have to provide all relevant data in your input dicts.
-
+With just a few examples (or none at all!) learn any new skill with structured outputs and perform any task you imagine.
 ```python
 from flashlearn.skills.learn_skill import LearnSkill
 from flashlearn.utils import imdb_reviews_50k
