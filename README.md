@@ -9,7 +9,7 @@ FlashLearn simplifies the use of LLMs for classic machine-learning tasks by prov
 
 - Examples - [click](/examples)
 - Toolkit for advanced tasks - [click](/flashlearn/skills/toolkit)
-- Customization - [click](/flashlearn/skills/toolkit)
+- Customization - [click](/flashlearn/skills/)
 
 ```bash
 pip install flashlearn
