@@ -43,14 +43,6 @@ def main():
     print(results)
 ```
 --------------------------------------------------------------------------------
-## Supported LLM Providers
-Anywhere you might rely on an ML pipeline component, you can swap in an LLM:
-```python
-client = OpenAI()  # This is equivalent to instantiating a pipeline component 
-deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
-lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
-```
---------------------------------------------------------------------------------
 ## Predefined Complex Pipelines in 3 Lines
 Load prebuilt “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data:
 
@@ -85,6 +77,14 @@ skill = ClassificationSkill(
 
 tasks = skill.create_tasks(data)
 print(skill.run_tasks_in_parallel(tasks))
+```
+
+## Supported LLM Providers
+Anywhere you might rely on an ML pipeline component, you can swap in an LLM:
+```python
+client = OpenAI()  # This is equivalent to instantiating a pipeline component 
+deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
+lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
 ```
 
 ## Target audience
