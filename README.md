@@ -15,20 +15,7 @@ FlashLearn simplifies the use of LLMs for classic machine-learning tasks by prov
 pip install flashlearn
 ```
 
-## Classify text in 10 lines of code
-```python
-import os
-from openai import OpenAI
-from flashlearn.skills.classification import ClassificationSkill
-
-os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
-data = [{"message": "Where is my refund?"}, {"message": "My product was damaged!"}]
-skill = ClassificationSkill(model_name="gpt-4o-mini", client=OpenAI(), categories=["billing","product issue"], system_prompt="Classify the request.")
-tasks = skill.create_tasks(data)
-print(skill.run_tasks_in_parallel(tasks))
-```
-
-### Learning a New Skill from Sample Data
+### Learning a New ANYTHING from Sample Data
 If existing tools or rewrites don’t match your needs, create a new skill from your data examples you will have to provide all relevant data in your input dicts.
 
 ```python
@@ -43,7 +30,7 @@ def main():
     skill = learner.learn_skill(
         data,
         task=(
-            'Evaluate likelihood to buy my product'
+            'Evaluate likelihood to buy my product and write the reason why (on key "reason")'
             'return int 1-100 on key "likely_to_Buy".'
         ),
     )
@@ -52,6 +39,31 @@ def main():
     results = skill.run_tasks_in_parallel(tasks)
     print(results)
 ```
+
+## Or Load predefined complex tasks in 3 lines of code
+Toolkit of 200+ predefined skills you can load - [click](/flashlearn/skills/toolkit)
+
+```python
+skill = GeneralSkill.load_skill(EmotionalToneDetection)
+tasks = skill.create_tasks([{"text": "Your input text here..."}])
+results = skill.run_tasks_in_parallel(tasks)
+
+print(results)
+```
+
+## Or use predefined skill builders in 10 lines of code
+```python
+import os
+from openai import OpenAI
+from flashlearn.skills.classification import ClassificationSkill
+
+os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
+data = [{"message": "Where is my refund?"}, {"message": "My product was damaged!"}]
+skill = ClassificationSkill(model_name="gpt-4o-mini", client=OpenAI(), categories=["billing","product issue"], system_prompt="Classify the request.")
+tasks = skill.create_tasks(data)
+print(skill.run_tasks_in_parallel(tasks))
+```
+
 
 ## Target audience
 - Anyone needing LLM-based data transformations at scale
