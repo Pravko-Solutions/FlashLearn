@@ -14,7 +14,11 @@ FlashLearn simplifies the use of LLMs for classic machine-learning tasks with an
 ```bash
 pip install flashlearn
 ```
-
+### Use any OpenAI, DeepSeek, or 100+ LLMS
+```python
+client = OpenAI() # Set in venv
+deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
+```
 ### Learning ANYTHING from Sample Data - Text, Voice, & images.
 With just a few examples (or none at all!) learn any new skill with structured outputs and perform any task you imagine.
 ```python
@@ -22,12 +26,13 @@ from flashlearn.skills.learn_skill import LearnSkill
 from flashlearn.utils import imdb_reviews_50k
 
 def main():
-    learner = LearnSkill(model_name="gpt-4o-mini")
+    learner = LearnSkill(model_name="gpt-4o-mini" clinet=OpenAI())
     data = imdb_reviews_50k(sample=100)
 
     # Provide instructions and sample data for the new skill
     skill = learner.learn_skill(
         data,
+         #client=client,
         task=(
             'Evaluate likelihood to buy my product and write the reason why (on key "reason")'
             'return int 1-100 on key "likely_to_Buy".'
@@ -43,6 +48,7 @@ def main():
 Toolkit of 200+ predefined skills you can load - [click](/flashlearn/skills/toolkit)
 
 ```python
+# You can pass client to load skill
 skill = GeneralSkill.load_skill(EmotionalToneDetection)
 tasks = skill.create_tasks([{"text": "Your input text here..."}])
 results = skill.run_tasks_in_parallel(tasks)
