@@ -16,19 +16,8 @@ Install:
 ```bash
 pip install flashlearn
 ```
-
---------------------------------------------------------------------------------
-## Supported LLM Providers
-Anywhere you might rely on an ML pipeline component, you can swap in an LLM:
-```python
-client = OpenAI()  # This is equivalent to instantiating a pipeline component 
-deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
-lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
-```
-
---------------------------------------------------------------------------------
-## Example: Learning a New “Task” from Sample Data
-Like  fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Provide sample data and instructions, then immediately apply to new inputs.
+## Learning a New “Task” from Sample Data
+Like fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Provide sample data and instructions, then immediately apply to new inputs.
 
 ```python
 from flashlearn.skills.learn_skill import LearnSkill
@@ -53,7 +42,14 @@ def main():
     results = skill.run_tasks_in_parallel(tasks)
     print(results)
 ```
-
+--------------------------------------------------------------------------------
+## Supported LLM Providers
+Anywhere you might rely on an ML pipeline component, you can swap in an LLM:
+```python
+client = OpenAI()  # This is equivalent to instantiating a pipeline component 
+deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
+lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
+```
 --------------------------------------------------------------------------------
 ## Predefined Complex Pipelines in 3 Lines
 Load prebuilt “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data:
