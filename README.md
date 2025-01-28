@@ -5,7 +5,7 @@
    ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
 ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
-FlashLearn simplifies the use of LLMs for classic machine-learning tasks by providing an end-to-end toolkit. It enables reliable processing ** (1000 calls/min) **, chaining, and storage for llm based tasks, classification, summarization, rewriting, and multi-step transformations at scale.
+FlashLearn simplifies the use of LLMs for classic machine-learning tasks by providing an end-to-end toolkit. It enables reliable processing **(1000 calls/min)**, chaining, and storage for llm based tasks, classification, summarization, rewriting, and multi-step transformations at scale.
 
 - Examples - [click](/examples)
 - Toolkit for advanced tasks - [click](/flashlearn/skills/toolkit)
