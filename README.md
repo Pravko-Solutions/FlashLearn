@@ -5,9 +5,7 @@
 ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
 ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
-FlashLearn provides a familiar machine-learning methodology for incorporating large language models into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks—just like you’d do with any standard ML library, but harnessing the power of LLMs under the hood.
-
-A robust architecture ensures reliable high-throughput requests (up to 1000 calls/min), allowing you to flexibly chain various LLM-based “transformers” and create “pipelines” for your own domain-specific tasks. Build end-to-end flows from raw data to structured outputs in just a few lines of code.
+FlashLearn provides a familiar machine-learning methodology  and orchestration **(up to 1000 calls/min)** for incorporating **LLMs** into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks—**just like you’d do with any standard ML library**, but harnessing the power of LLMs under the hood.
 
 • Examples: [click](/examples)  
 • Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
