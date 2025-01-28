@@ -5,7 +5,11 @@
    ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
 ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
-FlashLearn simplifies the use of LLMs for classic machine-learning tasks by providing an end-to-end toolkit. It enables reliable chaining and storage for tasks such as classification, summarization, rewriting, and multi-step transformations at scale.
+FlashLearn simplifies the use of LLMs for classic machine-learning tasks by providing an end-to-end toolkit. It enables reliable processing (1000 calls/min), chaining, and storage for llm based tasks, classification, summarization, rewriting, and multi-step transformations at scale.
+
+- Examples - [click](/examples)
+- Toolkit for advanced tasks - [click](/flashlearn/skills/toolkit)
+- Customization - [click](/flashlearn/skills/toolkit)
 
 ```bash
 pip install flashlearn
@@ -22,6 +26,31 @@ data = [{"message": "Where is my refund?"}, {"message": "My product was damaged!
 skill = ClassificationSkill(model_name="gpt-4o-mini", client=OpenAI(), categories=["billing","product issue"], system_prompt="Classify the request.")
 tasks = skill.create_tasks(data)
 print(skill.run_tasks_in_parallel(tasks))
+```
+
+### Learning a New Skill from Sample Data
+If existing tools or rewrites don’t match your needs, create a new skill from your data examples you will have to provide all relevant data in your input dicts.
+
+```python
+from flashlearn.skills.learn_skill import LearnSkill
+from flashlearn.utils import imdb_reviews_50k
+
+def main():
+    learner = LearnSkill(model_name="gpt-4o-mini")
+    data = imdb_reviews_50k(sample=100)
+
+    # Provide instructions and sample data for the new skill
+    skill = learner.learn_skill(
+        data,
+        task=(
+            'Evaluate likelihood to buy my product'
+            'return int 1-100 on key "likely_to_Buy".'
+        ),
+    )
+
+    tasks = skill.create_tasks(data)
+    results = skill.run_tasks_in_parallel(tasks)
+    print(results)
 ```
 
 ## Target audience
@@ -164,31 +193,6 @@ Result is valid JSON like:
 ```
 No disclaimers or random text—just structured data.
 [![Support & Consulting](https://img.shields.io/badge/Support%20%26%20Consulting-Click%20Here-brightgreen)](https://calendly.com/flashlearn)
-
-### Learning a New Skill from Sample Data
-If existing categories or rewrites don’t match your needs, create a new classification skill from examples—no model finetuning required.
-
-```python
-from flashlearn.skills.learn_skill import LearnSkill
-from flashlearn.utils import imdb_reviews_50k
-
-def main():
-    learner = LearnSkill(model_name="gpt-4o-mini")
-    data = imdb_reviews_50k(sample=100)
-
-    # Provide instructions and sample data for the new skill
-    skill = learner.learn_skill(
-        data,
-        task=(
-            'Based on data sample define 3 categories: satirical, quirky, absurd. '
-            'Return the category in the key "category".'
-        ),
-    )
-
-    tasks = skill.create_tasks(data)
-    results = skill.run_tasks_in_parallel(tasks)
-    print(results)
-```
 
 ---
 
