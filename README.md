@@ -40,7 +40,7 @@ def main():
     print(results)
 ```
 
-## Or Load predefined complex tasks in 3 lines of code
+### Load predefined complex tasks in 3 lines of code
 Toolkit of 200+ predefined skills you can load - [click](/flashlearn/skills/toolkit)
 
 ```python
@@ -51,7 +51,7 @@ results = skill.run_tasks_in_parallel(tasks)
 print(results)
 ```
 
-## Or use predefined skill builders in 10 lines of code
+## Use predefined skill builders
 ```python
 import os
 from openai import OpenAI
