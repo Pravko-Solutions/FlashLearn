@@ -16,6 +16,20 @@ Install:
 ```bash
 pip install flashlearn
 ```
+## Perplexity clone in 10 lines of code
+```python
+question = 'When was python launched?'
+skill = GeneralSkill.load_skill(ConvertToGoogleQueries, client=OpenAI())
+queries = skill.run_tasks_in_parallel(skill.create_tasks([{"query": question}]))["0"]
+results = SimpleGoogleSearch(GOOGLE_API_KEY, GOOGLE_CSE_ID).search(queries['google_queries'])
+msgs = [
+    {"role": "system", "content": "insert links from search results in response to quote it"},
+    {"role": "user", "content": str(results)},
+    {"role": "user", "content": question},
+]
+print(client.chat.completions.create(model=MODEL_NAME, messages=msgs).choices[0].message.content)
+```
+
 ## Learning a New “Task” from Sample Data
 Like fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Provide sample data and instructions, then immediately apply to new inputs.
 
