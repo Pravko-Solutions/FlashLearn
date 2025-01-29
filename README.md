@@ -29,8 +29,57 @@ msgs = [
 ]
 print(client.chat.completions.create(model=MODEL_NAME, messages=msgs).choices[0].message.content)
 ```
+## Skill is just a simple dictionary
+You can make your own, use predefined or generate them based on sample data.
 
-## Learning a New “Task” from Sample Data
+```python
+ConvertToGoogleQueries = {
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "ConvertToGoogleQueries",
+      "description": "Convert the given question into between 1 and n google queries to answer the given question.",
+      "strict": True,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "google_queries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "google_queries"
+        ],
+        "additionalProperties": False
+      }
+    }
+  }
+}
+```
+## Run in 3 lines of code
+Load “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data:
+
+```python
+# You can pass client to load your pipeline component
+skill = GeneralSkill.load_skill(ConvertToGoogleQueries)
+tasks = skill.create_tasks([{"query": "Users query"}])
+results = skill.run_tasks_in_parallel(tasks)
+
+print(results)
+```
+
+## Get structured results
+Get structured results to be used in downstream tasks.
+```python
+results = {'0':{'google_queries': [QUERY_1, QUERY_2, ...]}}
+
+```
+## Learning a New “Skill” from Sample Data
 Like fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Provide sample data and instructions, then immediately apply to new inputs.
 
 ```python
@@ -56,19 +105,6 @@ def main():
     results = skill.run_tasks_in_parallel(tasks)
     print(results)
 ```
---------------------------------------------------------------------------------
-## Predefined Complex Pipelines in 3 Lines
-Load prebuilt “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data:
-
-```python
-# You can pass client to load your pipeline component
-skill = GeneralSkill.load_skill(EmotionalToneDetection)
-tasks = skill.create_tasks([{"text": "Your input text here..."}])
-results = skill.run_tasks_in_parallel(tasks)
-
-print(results)
-```
-
 --------------------------------------------------------------------------------
 ## Single-Step Classification Using Prebuilt Skills
 Classic classification tasks are as straightforward as calling “fit_predict” on a ML estimator:
