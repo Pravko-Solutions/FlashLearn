@@ -30,10 +30,8 @@ msgs = [
 print(client.chat.completions.create(model=MODEL_NAME, messages=msgs).choices[0].message.content)
 ```
 ## "Skill" is just a simple dictionary
-Skill holds all the information that LLM needs to complete the given task. You can make your own, use predefined, or generate them based on sample data.
-> a special ability to do something
-> 
-> Definition of skill from the Cambridge Academic Content Dictionary
+A skill is an LLM's ability to perform a task, containing all necessary information. You can create, use predefined, or generate skills from sample data.
+
 ```python
 ConvertToGoogleQueries = {
   "skill_class": "GeneralSkill",
