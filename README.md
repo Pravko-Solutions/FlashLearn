@@ -78,6 +78,10 @@ tasks = skill.create_tasks([{"query": "Users query"}])
 results = skill.run_tasks_in_parallel(tasks)
 print(results)
 ```
+```text
+Processing tasks in parallel: 100%|██████████| 999/999 [01:00<00:00, 16.38 it/s, In total: 368969, Out total: 17288]
+INFO:ParallelProcessor:All tasks complete. 999 succeeded, 0 failed.
+```
 
 ## Get structured results
 Get structured results to be used in downstream tasks. Results is a dictionary where key values represent indexes from original dictionary list.
