@@ -29,7 +29,7 @@ msgs = [
 ]
 print(client.chat.completions.create(model=MODEL_NAME, messages=msgs).choices[0].message.content)
 ```
-## Skill is just a simple dictionary
+## "Skill" is just a simple dictionary
 You can make your own, use predefined or generate them based on sample data.
 
 ```python
