@@ -1,4 +1,5 @@
 # Auto-generated Python dictionaries from JSON files
+from flashlearn.skills.toolkit.simple_search import SimpleGoogleSearch
 
 AcademicAbstract = {'skill_class': 'GeneralSkill', 'system_prompt': 'Exactly populate the provided function definition', 'function_definition': {'type': 'function', 'function': {'name': 'GenerateAcademicAbstract', 'description': 'Generates an academic-style abstract summarizing the document.', 'strict': True, 'parameters': {'type': 'object', 'properties': {'abstract': {'type': 'string'}}, 'required': ['abstract'], 'additionalProperties': False}}}}
 
@@ -524,3 +525,30 @@ WriteCongratulatoryNote = {'skill_class': 'GeneralSkill', 'system_prompt': 'Exac
 
 YesNoMaybeQuestion = {'skill_class': 'GeneralSkill', 'system_prompt': 'Exactly populate the provided function definition', 'function_definition': {'type': 'function', 'function': {'name': 'DecisionMaker', 'description': "Returns a decision of 'yes', 'no', or 'maybe' along with a short justification.", 'strict': True, 'parameters': {'type': 'object', 'properties': {'response': {'type': 'string', 'enum': ['yes', 'no', 'maybe']}, 'justification': {'type': 'string'}}, 'required': ['response', 'justification'], 'additionalProperties': False}}}}
 
+ConvertToGoogleQueries = {
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "ConvertToGoogleQueries",
+      "description": "Convert the given question into between 1 and n google queries to answer the given question.",
+      "strict": True,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "google_queries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "google_queries"
+        ],
+        "additionalProperties": False
+      }
+    }
+  }
+}
