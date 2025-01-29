@@ -16,18 +16,25 @@ Install:
 ```bash
 pip install flashlearn
 ```
-## Perplexity clone in 10 lines of code
+## Perplexity clone in 12 lines of code
 ```python
 question = 'When was python launched?'
 skill = GeneralSkill.load_skill(ConvertToGoogleQueries, client=OpenAI())
-queries = skill.run_tasks_in_parallel(skill.create_tasks([{"query": question}]))["0"]
-results = SimpleGoogleSearch(GOOGLE_API_KEY, GOOGLE_CSE_ID).search(queries['google_queries'])
+tasks = skill.create_tasks([{"query": question}])
+flash_results = skill.run_tasks_in_parallel(tasks)
+queries = flash_results["0"]["google_queries"]
+results = SimpleGoogleSearch(GOOGLE_API_KEY, GOOGLE_CSE_ID).search(queries)
 msgs = [
     {"role": "system", "content": "insert links from search results in response to quote it"},
     {"role": "user", "content": str(results)},
     {"role": "user", "content": question},
 ]
 print(client.chat.completions.create(model=MODEL_NAME, messages=msgs).choices[0].message.content)
+```
+## Input is a list of dictionaries
+Simply take user inputs, API responses, and calculations from other tools and feed them to Flash Learn. 
+```python
+user_inputs = [{"query": question}])
 ```
 ## "Skill" is just a simple dictionary
 A skill is an LLM's ability to perform a task, containing all necessary information. You can create, use predefined, or generate skills from sample data.
@@ -62,22 +69,32 @@ ConvertToGoogleQueries = {
 }
 ```
 ## Run in 3 lines of code
-Load “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data:
+Load “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data. Tasks is a list of dictionaries you can simply store as .jsonl and use later.
 
 ```python
 # You can pass client to load your pipeline component
 skill = GeneralSkill.load_skill(ConvertToGoogleQueries)
 tasks = skill.create_tasks([{"query": "Users query"}])
 results = skill.run_tasks_in_parallel(tasks)
-
 print(results)
 ```
 
 ## Get structured results
-Get structured results to be used in downstream tasks.
+Get structured results to be used in downstream tasks. Results is a dictionary where key values represent indexes from original dictionary list.
 ```python
-results = {'0':{'google_queries': [QUERY_1, QUERY_2, ...]}}
-
+flash_results = {'0':{'google_queries': [QUERY_1, QUERY_2, ...]}}
+```
+## Pass on to next steps
+Parse results and use them in the next steps of your workflow with ease.
+```python
+queries = flash_results["0"]["google_queries"]
+results = SimpleGoogleSearch(GOOGLE_API_KEY, GOOGLE_CSE_ID).search(queries)
+msgs = [
+    {"role": "system", "content": "insert links from search results in response to quote it"},
+    {"role": "user", "content": str(results)},
+    {"role": "user", "content": question},
+]
+print(client.chat.completions.create(model=MODEL_NAME, messages=msgs).choices[0].message.content)
 ```
 ## Learning a New “Skill” from Sample Data
 Like fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Provide sample data and instructions, then immediately apply to new inputs.
