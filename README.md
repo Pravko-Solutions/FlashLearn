@@ -45,7 +45,7 @@ def main():
 ## Input is a list of dictionaries
 Simply take user inputs, API responses, and calculations from other tools and feed them to Flash Learn. 
 ```python
-user_inputs = [{"query": question}])
+user_inputs = [{"question": question}])
 ```
 ## Run in 3 lines of code
 Load “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data. Tasks is a list of dictionaries you can simply store as .jsonl and use later.
