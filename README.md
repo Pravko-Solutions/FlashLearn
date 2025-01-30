@@ -16,57 +16,36 @@ Install:
 ```bash
 pip install flashlearn
 ```
-## Perplexity clone in 12 lines of code
+## Learning a New “Skill” from Sample Data
+Like fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Provide sample data and instructions, then immediately apply to new inputs.
+
 ```python
-question = 'When was python launched?'
-skill = GeneralSkill.load_skill(ConvertToGoogleQueries, client=OpenAI())
-tasks = skill.create_tasks([{"query": question}])
-flash_results = skill.run_tasks_in_parallel(tasks)
-queries = flash_results["0"]["google_queries"]
-results = SimpleGoogleSearch(GOOGLE_API_KEY, GOOGLE_CSE_ID).search(queries)
-msgs = [
-    {"role": "system", "content": "insert links from search results in response to quote it"},
-    {"role": "user", "content": str(results)},
-    {"role": "user", "content": question},
-]
-print(client.chat.completions.create(model=MODEL_NAME, messages=msgs).choices[0].message.content)
+from flashlearn.skills.learn_skill import LearnSkill
+from flashlearn.utils import imdb_reviews_50k
+
+def main():
+    # Instantiate your pipeline “estimator” or “transformer”
+    learner = LearnSkill(model_name="gpt-4o-mini", clinet=OpenAI())
+    data = imdb_reviews_50k(sample=100)
+
+    # Provide instructions and sample data for the new skill
+    skill = learner.learn_skill(
+        data,
+        task=(
+            'Evaluate likelihood to buy my product and write the reason why (on key "reason")'
+            'return int 1-100 on key "likely_to_Buy".'
+        ),
+    )
+
+    # Construct tasks for parallel execution (akin to batch prediction)
+    tasks = skill.create_tasks(data)
+    results = skill.run_tasks_in_parallel(tasks)
+    print(results)
 ```
 ## Input is a list of dictionaries
 Simply take user inputs, API responses, and calculations from other tools and feed them to Flash Learn. 
 ```python
 user_inputs = [{"query": question}])
-```
-## "Skill" is just a simple dictionary
-A skill is an LLM's ability to perform a task, containing all necessary information. You can create, use predefined, or generate skills from sample data.
-
-```python
-ConvertToGoogleQueries = {
-  "skill_class": "GeneralSkill",
-  "system_prompt": "Exactly populate the provided function definition",
-  "function_definition": {
-    "type": "function",
-    "function": {
-      "name": "ConvertToGoogleQueries",
-      "description": "Convert the given question into between 1 and n google queries to answer the given question.",
-      "strict": True,
-      "parameters": {
-        "type": "object",
-        "properties": {
-          "google_queries": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "google_queries"
-        ],
-        "additionalProperties": False
-      }
-    }
-  }
-}
 ```
 ## Run in 3 lines of code
 Load “skills” as if they were specialized transformers in a ML pipeline. Instantly apply them to your data. Tasks is a list of dictionaries you can simply store as .jsonl and use later.
@@ -100,32 +79,37 @@ msgs = [
 ]
 print(client.chat.completions.create(model=MODEL_NAME, messages=msgs).choices[0].message.content)
 ```
-## Learning a New “Skill” from Sample Data
-Like fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Provide sample data and instructions, then immediately apply to new inputs.
+## "Skill" is just a simple dictionary
+A skill is an LLM's ability to perform a task, containing all necessary information. You can create, use predefined, or generate skills from sample data.
 
 ```python
-from flashlearn.skills.learn_skill import LearnSkill
-from flashlearn.utils import imdb_reviews_50k
-
-def main():
-    # Instantiate your pipeline “estimator” or “transformer”
-    learner = LearnSkill(model_name="gpt-4o-mini", clinet=OpenAI())
-    data = imdb_reviews_50k(sample=100)
-
-    # Provide instructions and sample data for the new skill
-    skill = learner.learn_skill(
-        data,
-        task=(
-            'Evaluate likelihood to buy my product and write the reason why (on key "reason")'
-            'return int 1-100 on key "likely_to_Buy".'
-        ),
-    )
-
-    # Construct tasks for parallel execution (akin to batch prediction)
-    tasks = skill.create_tasks(data)
-    results = skill.run_tasks_in_parallel(tasks)
-    print(results)
-```
+ConvertToGoogleQueries = {
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "ConvertToGoogleQueries",
+      "description": "Convert the given question into between 1 and n google queries to answer the given question.",
+      "strict": True,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "google_queries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "google_queries"
+        ],
+        "additionalProperties": False
+      }
+    }
+  }
+}
 --------------------------------------------------------------------------------
 ## Single-Step Classification Using Prebuilt Skills
 Classic classification tasks are as straightforward as calling “fit_predict” on a ML estimator:
