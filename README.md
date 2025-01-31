@@ -33,28 +33,29 @@ Like a fit/predict pattern, you can quickly “learn” a custom skill from mini
 
 ```python
 from flashlearn.skills.learn_skill import LearnSkill
-from flashlearn.utils import sample_social_posts
 from flashlearn.client import OpenAI
 
-def main():
-    # Instantiate your pipeline “estimator” or “transformer”
-    learner = LearnSkill(model_name="gpt-4o-mini", client=OpenAI())
-    data = sample_social_posts(sample=100)  # Suppose this returns 100 comments
+# Instantiate your pipeline “estimator” or “transformer”
+learner = LearnSkill(model_name="gpt-4o-mini", client=OpenAI())
+data =  [
+    {"comment_text": "I love this product, it's everything I wanted!"},
+    {"comment_text": "Not impressed... wouldn't consider buying this."},
+    # ...
+]
 
-    # Provide instructions and sample data for the new skill
-    skill = learner.learn_skill(
-        data,
-        task=(
-            "Evaluate how likely the user is to buy my product based on the sentiment in their comment, "
-            "return an integer 1-100 on key 'likely_to_buy', "
-            "and a short explanation on key 'reason'."
-        ),
-    )
+# Provide instructions and sample data for the new skill
+skill = learner.learn_skill(
+    data,
+    task=(
+        "Evaluate how likely the user is to buy my product based on the sentiment in their comment, "
+        "return an integer 1-100 on key 'likely_to_buy', "
+        "and a short explanation on key 'reason'."
+    ),
+)
 
-    # Construct tasks for parallel execution (akin to batch prediction)
-    skill.save("evaluate_buy_comments_skill.json")
-if __name__ == "__main__":
-    main()
+# Construct tasks for parallel execution (akin to batch prediction)
+skill.save("evaluate_buy_comments_skill.json")
+
 ```
 
 ---
