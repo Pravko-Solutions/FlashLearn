@@ -13,7 +13,7 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 
 ```mermaid
 flowchart TB
-    H[UserComments] --> I[LoadSkill / Learn Skill]
+    H[Data] --> I[LoadSkill / Learn Skill]
     I --> J[CreateTasks]
     J --> K[RunTasks]
     K --> L[StructuredResults]
