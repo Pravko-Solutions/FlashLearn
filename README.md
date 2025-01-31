@@ -295,7 +295,7 @@ The output is consistently keyed by task ID (`"0"`, `"1"`, etc.), with the JSON 
   ```
 ---
 
-## Loading g a Skill
+## Loading a Skill
 
 Here’s how the library handles comedic rewrites:
 
