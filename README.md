@@ -52,10 +52,7 @@ def main():
     )
 
     # Construct tasks for parallel execution (akin to batch prediction)
-    tasks = skill.create_tasks(data)
-    results = skill.run_tasks_in_parallel(tasks)
-    print(results)
-
+    skill.save("evaluate_buy_comments_skill.json")
 if __name__ == "__main__":
     main()
 ```
