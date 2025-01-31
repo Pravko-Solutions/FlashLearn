@@ -11,25 +11,19 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 
 ## High-Level Concept Flow
 
-### Learning a skill
 ```mermaid
 flowchart LR
-    A[Data] --> B[LearnSkill]
-    B --> C[SkillObject]
-    C --> D[CreateTasks]
-    D --> E[RunTasks]
-    E --> F[StructuredResults]
-    F --> G[DownstreamSteps]
-```
+    %% Define custom classes for styling
+    classDef step fill:#DFF2FA,stroke:#008B8B,stroke-width:1px,color:#333,font-weight:bold
+    classDef final fill:#FFEFD5,stroke:#8B4513,stroke-width:2px,color:#333,font-weight:bold,stroke-dasharray: 5 5
 
-### Using a skill
-```mermaid
-flowchart LR
-    H[Data] --> I[LoadSkill]
-    I --> J[CreateTasks]
-    J --> K[RunTasks]
-    K --> L[StructuredResults]
-    L --> M[DownstreamSteps]
+    %% Define the flow
+    H[UserComments]:::step --> I[LoadSkill / Learn skill]:::step
+    I --> J[CreateTasks]:::step
+    J --> K[RunTasks]:::step
+    K --> L[StructuredResults]:::step
+    L --> M[DownstreamSteps]:::final
+```--> M[DownstreamSteps]
 ```
 ---
 
