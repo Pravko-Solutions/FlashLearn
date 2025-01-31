@@ -1,7 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
-![Pure Python](https://img.shields.io/badge/Python-Pure-blue)  
-![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)  
-![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  ![Pure Python](https://img.shields.io/badge/Python-Pure-blue)  ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen) ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
 FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min)** for incorporating **Agent LLMs** into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks—just like you’d do with any standard ML library—harnessing the power of LLMs under the hood.
 
