@@ -11,13 +11,25 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 
 ## High-Level Concept Flow
 
-1. Convert data rows into JSON tasks.  
-2. Apply a Skill (classification, rewriting, etc.).  
-3. LLM outputs guaranteed JSON.  
-4. (Optional) Store or chain the JSON results into your next step.
-
+### Learning a skill
+```mermaid
+flowchart LR
+    A[Data] --> B[LearnSkill]
+    B --> C[SkillObject]
+    C --> D[CreateTasks]
+    D --> E[RunTasks]
+    E --> F[StructuredResults]
+    F --> G[DownstreamSteps]
 ```
-Dataset Rows → JSON Tasks → FlashLearn Skills + LLM → Guaranteed JSON → DB/Next Steps
+
+### Using a skill
+```mermaid
+flowchart LR
+    H[Data] --> I[LoadSkill]
+    I --> J[CreateTasks]
+    J --> K[RunTasks]
+    K --> L[StructuredResults]
+    L --> M[DownstreamSteps]
 ```
 ---
 
