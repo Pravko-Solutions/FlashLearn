@@ -36,7 +36,10 @@ class DiscoverLabelsSkill(BaseDataSkill):
         :param columns: Ignored here; kept for signature compatibility.
         :return: A single-item list containing one aggregated task, or empty if no content.
         """
-        output_params = self.build_output_params(output_modality)
+        if output_modality != "text":
+            output_params = self.build_output_params(output_modality)
+        else:
+            output_params = {}
         all_blocks = []
 
         # Aggregate content blocks across all rows

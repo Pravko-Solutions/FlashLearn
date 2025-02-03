@@ -138,7 +138,10 @@ class BaseDataSkill(BaseSkill, ABC):
         """
         if column_modalities is None:
             column_modalities = {}
-        output_params = self.build_output_params(output_modality)
+        if output_modality != "text":
+            output_params = self.build_output_params(output_modality)
+        else:
+            output_params = {}
 
         tasks = []
         for idx, row in enumerate(df):
