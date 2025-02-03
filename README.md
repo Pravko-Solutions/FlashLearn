@@ -123,6 +123,59 @@ flowchart TB
     K --> L[Structured Results]
     L --> M[Downstream Steps]
 ```
+
+## “All JSON, All the Time”: Example Classification Workflow
+
+The following example classifies IMDB movie reviews into “positive” or “negative” sentiment. Notice how at each step you can view, store, or chain the partial results—always in JSON format.
+
+```python
+from flashlearn.utils import imdb_reviews_50k
+from flashlearn.skills import GeneralSkill
+from flashlearn.skills.toolkit import ClassifyReviewSentiment
+import json
+import os
+
+def main():
+    os.environ["OPENAI_API_KEY"] = "API-KEY"
+
+    # Step 1: Load or generate your data
+    data = imdb_reviews_50k(sample=100)  # 100 sample reviews
+
+    # Step 2: Load JSON definition of skill in dict format
+    skill = GeneralSkill.load_skill(ClassifyReviewSentiment)
+        
+    # Step 3: Save skill definition in JSON for later loading
+    #skill.save("BinaryClassificationSkill.json")
+    
+    # Step 5: Convert data rows into JSON tasks
+    tasks = skill.create_tasks(data)
+    
+    # Step 6: Save results to a JSONL file and run now or later
+    with open('tasks.jsonl', 'w') as jsonl_file:
+        for entry in tasks:
+            jsonl_file.write(json.dumps(entry) + '\n')
+            
+    # Step 7: Run tasks (in parallel by default)
+    results = skill.run_tasks_in_parallel(tasks)
+
+    # Step 8: Every output is strict JSON
+    # You can easily map results back to inputs
+    # e.g., store results as JSON Lines
+    with open('sentiment_results.jsonl', 'w') as f:
+        for task_id, output in results.items():
+            input_json = data[int(task_id)]
+            input_json['result'] = output
+            f.write(json.dumps(input_json) + '\n')
+
+    # Step 9: Inspect or chain the JSON results
+    print("Sample result:", results.get("0"))
+
+if __name__ == "__main__":
+    main()
+```
+
+The output is consistently keyed by task ID (`"0"`, `"1"`, etc.), with the JSON content that your pipeline can parse or store with no guesswork.
+
 ---
 
 ## “Skill” Is Just a Simple Dictionary
@@ -184,33 +237,7 @@ skill = ClassificationSkill(
 tasks = skill.create_tasks(data)
 print(skill.run_tasks_in_parallel(tasks))
 ```
-## Supported LLM Providers
-Anywhere you might rely on an ML pipeline component, you can swap in an LLM:
-```python
-client = OpenAI()  # This is equivalent to instantiating a pipeline component 
-deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
-lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
-ollama =  OpenAI(base_url = 'http://localhost:11434/v1', api_key='ollama', # required, but unused) # Just use ollama's openai client
-```
-
-## Target audience
-- Anyone needing LLM-based data transformations at scale
-- Data scientists tired of building specialized models with insufficient data
-
-[![Support & Consulting](https://img.shields.io/badge/Support%20%26%20Consulting-Click%20Here-brightgreen)](https://calendly.com/flashlearn)
-
 ---
-
-## Key Features 
-
-- **100% JSON Workflows**: Every response is valid JSON—machine-friendly from the start.  
-- **Scales Easily**: Concurrency and rate limiting for large-scale projects.  
-- **Zero Model Training**: Leverage your LLM directly; define or reuse “skills.”  
-- **LearnSkill**: Instant creation of classification/rewriting “skills” from sample data.  
-- **Batch or Real-Time**: Process live data, or batch thousands of tasks.  
-- **Cost Estimation**: Predict token expenditures before running large jobs.  
-- **Skill Library**: 200+ built-in skill definitions ([docs](flashlearn/skills/toolkit)).  
-- **Multi-Modal**: Handle text, images, and more in consistent JSON pipelines.
 
 ## High-throughput
 Process up to 999 tasks in 60 seconds on your local machine. For higher loads and enterprise needs contact us for enterprise solution.
@@ -220,66 +247,14 @@ Process up to 999 tasks in 60 seconds on your local machine. For higher loads an
 Processing tasks in parallel: 100%|██████████| 999/999 [01:00<00:00, 16.38 it/s, In total: 368969, Out total: 17288]
 INFO:ParallelProcessor:All tasks complete. 999 succeeded, 0 failed.
 ```
-
-## “All JSON, All the Time”: Example Classification Workflow
-
-The following example classifies IMDB movie reviews into “positive” or “negative” sentiment. Notice how at each step you can view, store, or chain the partial results—always in JSON format.
-
-```python
-from flashlearn.utils import imdb_reviews_50k
-from flashlearn.skills import GeneralSkill
-from flashlearn.skills.toolkit import ClassifyReviewSentiment
-import json
-import os
-
-def main():
-    os.environ["OPENAI_API_KEY"] = "API-KEY"
-
-    # Step 1: Load or generate your data
-    data = imdb_reviews_50k(sample=100)  # 100 sample reviews
-
-    # Step 2: Load JSON definition of skill in dict format
-    skill = GeneralSkill.load_skill(ClassifyReviewSentiment)
-        
-    # Step 3: Save skill definition in JSON for later loading
-    #skill.save("BinaryClassificationSkill.json")
-    
-    # Step 5: Convert data rows into JSON tasks
-    tasks = skill.create_tasks(data)
-    
-    # Step 6: Save results to a JSONL file and run now or later
-    with open('tasks.jsonl', 'w') as jsonl_file:
-        for entry in tasks:
-            jsonl_file.write(json.dumps(entry) + '\n')
-            
-    # Step 7: Run tasks (in parallel by default)
-    results = skill.run_tasks_in_parallel(tasks)
-
-    # Step 8: Every output is strict JSON
-    # You can easily map results back to inputs
-    # e.g., store results as JSON Lines
-    with open('sentiment_results.jsonl', 'w') as f:
-        for task_id, output in results.items():
-            input_json = data[int(task_id)]
-            input_json['result'] = output
-            f.write(json.dumps(input_json) + '\n')
-
-    # Step 9: Inspect or chain the JSON results
-    print("Sample result:", results.get("0"))
-
-if __name__ == "__main__":
-    main()
-```
-
-The output is consistently keyed by task ID (`"0"`, `"1"`, etc.), with the JSON content that your pipeline can parse or store with no guesswork.
-
 ---
 
-## Use Cases & Real Examples
+## **Parallel Execution**: 
 
-### Parallel Execution & Cost Estimation
-- **Parallel Execution**: `run_tasks_in_parallel` organizes concurrent requests to the LLM.  
-- **Cost Estimation**: Quickly preview your token usage:
+`run_tasks_in_parallel` organizes concurrent requests to the LLM.
+
+## **Cost Estimation**
+Quickly preview your token usage:
   ```python
   cost_estimate = skill.estimate_tasks_cost(tasks)
   print("Estimated cost:", cost_estimate)
