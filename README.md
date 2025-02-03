@@ -14,6 +14,20 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 ```bash
 pip install flashlearn
 ```
+## High-Level Concept Flow
+
+```mermaid
+flowchart TB
+    classDef smallBox font-size:10px, padding:2px;
+
+    H[Your Data] --> I[Load Skill / Learn Skill]
+    I --> J[Create Tasks]
+    J --> K[Run Tasks]
+    K --> L[Structured Results]
+    L --> M[Downstream Steps]
+
+    class H,I,J,K,L,M smallBox;
+```
 
 ---
 
@@ -113,16 +127,6 @@ for idx, result in flash_results.items():
     print(f"Comment #{idx} => Score: {desired_score}, Reason: {reason_text}")
 ```
 # Customization
-## High-Level Concept Flow
-
-```mermaid
-flowchart TB
-    H[Data] --> I[Load Skill / Learn Skill]
-    I --> J[Create Tasks]
-    J --> K[Run Tasks]
-    K --> L[Structured Results]
-    L --> M[Downstream Steps]
-```
 
 ## “All JSON, All the Time”: Example Classification Workflow
 
