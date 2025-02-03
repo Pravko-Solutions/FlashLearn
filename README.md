@@ -29,7 +29,7 @@ from flashlearn.client import OpenAI
 learner = LearnSkill(model_name="gpt-4o-mini", client=OpenAI())
 # Provide instructions and sample data for the new skill
 skill = learner.learn_skill(
-    #df=[], if you want you can also pass data sample
+    df=[], #dif you want you can also pass data sample
     task=(
         "Evaluate how likely the user is to buy my product based on the sentiment in their comment, "
         "return an integer 1-100 on key 'likely_to_buy', "
