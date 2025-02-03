@@ -3,7 +3,8 @@
 
 FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min)** for incorporating **Agent LLMs** into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks—just like you’d do with any standard ML library—harnessing the power of LLMs under the hood.
 
-- Usage cookbook [Examples](/examples)  
+- Browser use agent for price matching [Example](/examples/browser_use_price_matching)  
+- Example boiler plate uses [Example](/examples)
 - Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
 - Customization options: [click](/flashlearn/skills/)  
 
