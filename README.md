@@ -7,17 +7,6 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 - Example boiler plate uses [Example](/examples)
 - Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
 - Customization options: [click](/flashlearn/skills/)  
-
-## High-Level Concept Flow
-
-```mermaid
-flowchart TB
-    H[Data] --> I[Load Skill / Learn Skill]
-    I --> J[Create Tasks]
-    J --> K[Run Tasks]
-    K --> L[Structured Results]
-    L --> M[Downstream Steps]
-```
 ---
 
 ## Installation
@@ -123,7 +112,17 @@ for idx, result in flash_results.items():
     # Now do something with the score and reason, e.g., store in DB or pass to next step
     print(f"Comment #{idx} => Score: {desired_score}, Reason: {reason_text}")
 ```
+# Customization
+## High-Level Concept Flow
 
+```mermaid
+flowchart TB
+    H[Data] --> I[Load Skill / Learn Skill]
+    I --> J[Create Tasks]
+    J --> K[Run Tasks]
+    K --> L[Structured Results]
+    L --> M[Downstream Steps]
+```
 ---
 
 ## “Skill” Is Just a Simple Dictionary
