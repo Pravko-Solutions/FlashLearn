@@ -217,7 +217,6 @@ You can load or save this skill to JSON as needed, version it, share it, or plug
 --------------------------------------------------------------------------------
 ## Single-Step Classification Using Prebuilt Skills
 Classic classification tasks are as straightforward as calling “fit_predict” on a ML estimator:
-• Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
 
 ```python
 import os
