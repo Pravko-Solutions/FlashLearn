@@ -28,9 +28,9 @@ pip install flashlearn
 
 ---
 
-## Learning a New “Skill” from Sample Data
+## Learning a New “Skill”
 
-Like a fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Below, we’ll create a skill that evaluates the likelihood of buying a product from user comments on social media posts, returning a score (1–100) and a short reason. We’ll use a small dataset of comments and instruct the LLM to transform each comment according to our custom specification.
+Like a fit/predict pattern, you can quickly “learn” a custom skill. Below, we’ll create a skill that evaluates the likelihood of buying a product from user comments on social media posts, returning a score (1–100) and a short reason. We’ll instruct the LLM to transform each comment according to our custom specifications.
 
 ```python
 from flashlearn.skills.learn_skill import LearnSkill
@@ -38,15 +38,9 @@ from flashlearn.client import OpenAI
 
 # Instantiate your pipeline “estimator” or “transformer”
 learner = LearnSkill(model_name="gpt-4o-mini", client=OpenAI())
-data =  [
-    {"comment_text": "I love this product, it's everything I wanted!"},
-    {"comment_text": "Not impressed... wouldn't consider buying this."},
-    # ...
-]
-
 # Provide instructions and sample data for the new skill
 skill = learner.learn_skill(
-    data,
+    #df=[], if you want you can also pass data sample
     task=(
         "Evaluate how likely the user is to buy my product based on the sentiment in their comment, "
         "return an integer 1-100 on key 'likely_to_buy', "
