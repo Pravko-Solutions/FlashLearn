@@ -18,7 +18,7 @@ pip install flashlearn
 
 ```mermaid
 flowchart TB
-    classDef smallBox font-size:20px, padding:2px;
+    classDef smallBox font-size:12px, padding:0px;
 
     H[Your Data] --> I[Load Skill / Learn Skill]
     I --> J[Create Tasks]
