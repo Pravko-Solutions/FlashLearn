@@ -1,0 +1,24 @@
+{
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "createGoogleQuery",
+      "description": "Generates a Google search query based on the provided input.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

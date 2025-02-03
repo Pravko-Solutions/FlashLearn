@@ -1,0 +1,32 @@
+{
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "FindMostSimilarProduct",
+      "description": "Parse text input and select the most similar product to the query, returning structured product information for the best product.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "short_description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "price",
+          "short_description"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
