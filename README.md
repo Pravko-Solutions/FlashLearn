@@ -3,12 +3,12 @@
 
 FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min)** for incorporating **Agent LLMs** into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks—just like you’d do with any standard ML library—harnessing the power of LLMs under the hood. It supports **LiteLLM**, **Ollama**, **OpenAI**, **DeepSeek**, and all other OpenAI-compatible clients.
 
-[![Join Developer Hours] (https://img.shields.io/badge/JOIN%20DEVELOPER%20HOURS-Get%20the%20help%20you%20need-brightgreen)](https://calendly.com/flashlearn/developer-hours)
-
 - Browser use agent for price matching [Example](/examples/browser_use_price_matching)  
 - Example boiler plate uses [Example](/examples)
 - Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
 - Customization options: [click](/flashlearn/skills/)  
+
+[![JOIN DEVELOPER HOURS - Get the help you need](https://img.shields.io/badge/JOIN%20DEVELOPER%20HOURS-Get%20the%20help%20you%20need-brightgreen)](https://calendly.com/flashlearn/developer-hours)
 ---
 
 ## Installation
@@ -129,8 +129,7 @@ for idx, result in flash_results.items():
     print(f"Comment #{idx} => Score: {desired_score}, Reason: {reason_text}")
 ```
 ## Developer hours
-[![Join Developer Hours] (https://img.shields.io/badge/JOIN%20DEVELOPER%20HOURS-Get%20the%20help%20you%20need-brightgreen)](https://calendly.com/flashlearn/developer-hours)
-
+[![JOIN DEVELOPER HOURS - Get the help you need](https://img.shields.io/badge/JOIN%20DEVELOPER%20HOURS-Get%20the%20help%20you%20need-brightgreen)](https://calendly.com/flashlearn/developer-hours)
 # Customization
 
 ## “All JSON, All the Time”: Example Classification Workflow
