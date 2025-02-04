@@ -51,7 +51,7 @@ skill = learner.learn_skill(
     ),
 )
 
-# Construct tasks for parallel execution (akin to batch prediction)
+# Save skill to be used from any system
 skill.save("evaluate_buy_comments_skill.json")
 
 ```
