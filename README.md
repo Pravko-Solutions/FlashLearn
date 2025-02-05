@@ -13,7 +13,7 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 ## Installation
 
 ```bash
-pip install flash learn
+pip install flashlearn
 ```
 Add the API keys for the provider you want to use to your .env file.
 ```bash
