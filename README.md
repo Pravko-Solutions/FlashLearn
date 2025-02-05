@@ -7,11 +7,8 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 - Example boiler plate uses [Example](/examples)
 - Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
 - Customization options: [click](/flashlearn/skills/)  
-### [Full Documentation](https://flashlearn.tech/index.php/docs/)
 
-### Get help
-[![JOIN DEVELOPER HOURS - Get the help you need](https://img.shields.io/badge/JOIN%20DEVELOPER%20HOURS-Get%20the%20help%20you%20need-brightgreen)](https://calendly.com/flashlearn/developer-hours)
----
+### [Full Documentation](https://flashlearn.tech/index.php/docs/)
 
 ## Installation
 
