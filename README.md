@@ -132,8 +132,15 @@ for idx, result in flash_results.items():
     # Now do something with the score and reason, e.g., store in DB or pass to next step
     print(f"Comment #{idx} => Score: {desired_score}, Reason: {reason_text}")
 ```
-## Developer hours
-[![JOIN DEVELOPER HOURS - Get the help you need](https://img.shields.io/badge/JOIN%20DEVELOPER%20HOURS-Get%20the%20help%20you%20need-brightgreen)](https://calendly.com/flashlearn/developer-hours)
+## Supported LLM Providers
+Anywhere you might rely on an ML pipeline component, you can swap in an LLM:
+
+```python
+client = OpenAI()  # This is equivalent to instantiating a pipeline component 
+deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
+lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
+ollama =  OpenAI(base_url = 'http://localhost:11434/v1', api_key='ollama', # required, but unused) # Just use ollama's openai client
+```
 # Customization
 
 ## “All JSON, All the Time”: Example Classification Workflow
