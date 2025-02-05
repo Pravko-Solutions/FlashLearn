@@ -8,13 +8,18 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 - Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
 - Customization options: [click](/flashlearn/skills/)  
 
-### [Full Documentation](https://flashlearn.tech/index.php/docs/)
+###  -->[Full Documentation](https://flashlearn.tech/index.php/docs/)
 
 ## Installation
 
 ```bash
-pip install flashlearn
+pip install flash learn
 ```
+Add the API keys for the provider you want to use to your .env file.
+```bash
+OPENAI_API_KEY=
+```
+
 ## High-Level Concept Flow
 
 ```mermaid
