@@ -118,8 +118,10 @@ To demonstrate reusability, let's load the skill from the JSON file we just save
 
 ```python
 # Step 4: Load the Skill
-
-loaded_skill = GeneralSkill.load_skill(skill_path)
+skill_path = os.path.join(json_folder, "user_behavior_analysis_skill.json")
+with open(skill_path, "r", encoding="utf-8") as file:
+    definition = json.load(file)
+loaded_skill = GeneralSkill.load_skill(definition)
 print("Skill loaded from JSON:", loaded_skill)
 ```
 
