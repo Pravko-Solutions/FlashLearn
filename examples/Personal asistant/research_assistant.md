@@ -1,8 +1,4 @@
-Certainly! Below is the guide rewritten in perfect Markdown format.
-
----
-
-# Jupyter Notebook Tutorial: Creating an Autonomous Research Assistant
+# Creating an Autonomous Research Assistant
 
 ---
 
