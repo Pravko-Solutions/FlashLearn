@@ -1,4 +1,6 @@
 # Creating an Autonomous Research Assistant
+## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
+
 ---
 # GPT MODELS CAN GENERATE AGENT CODE WITH THE BELOW PROMPT COPY AND PASTE IT IF YOU DO NOT WANT TO READ IT.
 ## Step 0: Environment Setup
