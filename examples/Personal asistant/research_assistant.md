@@ -94,7 +94,6 @@ def create_query_skill(data):
 # skill_query = create_query_skill(research_topics)
 # skill_json_path = os.path.join(json_folder, "research_query_skill.json")
 # skill_query.save(skill_json_path)
-# loaded_skill_query = GeneralSkill.load_skill(skill_json_path)
 ```
 
 ---
