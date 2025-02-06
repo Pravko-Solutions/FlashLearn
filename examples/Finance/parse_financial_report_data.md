@@ -1,7 +1,3 @@
-Certainly! Here's the entire content written in Markdown format:
-
----
-
 # Automated Financial Data Extraction
 
 ---
