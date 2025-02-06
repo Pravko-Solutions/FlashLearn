@@ -1,6 +1,4 @@
-Certainly! Below is the content transformed into Markdown format.
-
-# Jupyter Notebook Tutorial: Building an AI-Powered User Behavior Workflow
+User Behavior Workflow
 
 ## Introduction
 
