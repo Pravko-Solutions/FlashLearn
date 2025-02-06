@@ -1,5 +1,4 @@
 # Auto-generated Python dictionaries from JSON files
-from flashlearn.skills.toolkit.simple_search import SimpleGoogleSearch
 
 AcademicAbstract = {'skill_class': 'GeneralSkill', 'system_prompt': 'Exactly populate the provided function definition', 'function_definition': {'type': 'function', 'function': {'name': 'GenerateAcademicAbstract', 'description': 'Generates an academic-style abstract summarizing the document.', 'strict': True, 'parameters': {'type': 'object', 'properties': {'abstract': {'type': 'string'}}, 'required': ['abstract'], 'additionalProperties': False}}}}
 

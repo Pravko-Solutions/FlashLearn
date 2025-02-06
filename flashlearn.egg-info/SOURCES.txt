@@ -29,6 +29,7 @@ flashlearn/skills/tests/test_learn_skill.py
 flashlearn/skills/toolkit/__init__.py
 flashlearn/skills/toolkit/generate_init.py
 flashlearn/skills/toolkit/generate_toolkit.py
+flashlearn/skills/toolkit/simple_search.py
 flashlearn/skills/toolkit/validate_json_files.py
 flashlearn/utils/__init__.py
 flashlearn/utils/demo_data.py

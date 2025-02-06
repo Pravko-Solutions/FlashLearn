@@ -259,26 +259,28 @@ from flashlearn.skills import GeneralSkill
 from flashlearn.skills.toolkit import ClassifyDifficultyOfQuestion
 from flashlearn.utils import imdb_reviews_50k
 
+
 def main():
-    # Step 1: (Optional) Provide your LLM credentials
-    # os.environ["OPENAI_API_KEY"] = "API_KEY"
+  # Step 1: (Optional) Provide your LLM credentials
+  # os.environ["OPENAI_API_KEY"] = "API_KEY"
 
-    # Step 2: Load data
-    reviews = imdb_reviews_50k(sample=50)
+  # Step 2: Load data
+  reviews = imdb_reviews_50k(sample=50)
 
-    # Step 3: Load the previously created ClassificationSkill definition
-    # In this example, we have a “toolkit” definition named ClassifyDifficultyOfQuestion
-    skill = GeneralSkill.load_skill(ClassifyDifficultyOfQuestion)
+  # Step 3: Load the previously created ClassificationSkill definition
+  # In this example, we have a “toolkit” definition named ClassifyDifficultyOfQuestion
+  skill = GeneralSkill.load_skill(ClassifyDifficultyOfQuestion)
 
-    # Step 4: Create tasks
-    tasks = skill.create_tasks(reviews)
+  # Step 4: Create tasks
+  tasks = skill.create_tasks(reviews)
 
-    # Step 5: Run tasks in parallel
-    results = skill.run_tasks_in_parallel(tasks)
-    print("Results:", results)
+  # Step 5: Run tasks in parallel
+  results = skill.run_tasks_in_parallel(tasks)
+  print("Results:", results)
+
 
 if __name__ == "__main__":
-    main()
+  main()
 ```
 
 ## Custom Create Tasks Logic

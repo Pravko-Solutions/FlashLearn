@@ -36,6 +36,6 @@ def read_python_files_from_specific_folders(top_level_folder, target_folders):
 # Example usage
 if __name__ == "__main__":
     top_level_folder = r'C:/Users/Gal/PycharmProjects/FlashLearn'
-    target_folders = ['flashlearn/skills']
+    target_folders = ['examples']
     code_as_string = read_python_files_from_specific_folders(top_level_folder, target_folders)
     print(code_as_string)

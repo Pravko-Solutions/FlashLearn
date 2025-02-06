@@ -1,6 +1,6 @@
 Metadata-Version: 2.2
 Name: flashlearn
-Version: 1.0.0
+Version: 1.0.2
 Summary: Never train another ML model again
 Author-email: Gal Giacomelli <info@clerkly.co>
 Requires-Python: >=3.8
@@ -61,25 +61,216 @@ Requires-Dist: urllib3>=2.3.0
 Requires-Dist: yarl>=1.18.3
 Requires-Dist: zipp>=3.21.0
 
-# FlashLearn  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-   ![Pure Python](https://img.shields.io/badge/Python-Pure-blue)
-   ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen)
-![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
+# Flash Learn - Agents made simple
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  ![Pure Python](https://img.shields.io/badge/Python-Pure-blue)  ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen) ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
+FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min)** for incorporating **Agent LLMs** into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks—just like you’d do with any standard ML library—harnessing the power of LLMs under the hood.
 
-FlashLearn is a Python library designed to ensure that every Large Language Model (LLM) response is always valid JSON. Whether you are classifying, summarizing, rewriting, or even performing multi-step data transformations, FlashLearn provides a stable, predictable output format so you can store and chain your results without worrying about malformed text or inconsistent formats.
+- Browser use agent for price matching [Example](/examples/browser_use_price_matching)  
+- Example boiler plate uses [Example](/examples)
+- Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
+- Customization options: [click](/flashlearn/skills/)  
 
-- Zero custom training—use your existing LLM.  
-- Compatible with open-source (e.g., DeepSeek) or commercial (e.g., OpenAI) offerings.  
-- Scalable concurrency to handle from tens to millions of tasks.  
-- A rich library of pre-built skills (classification, rewriting, summarization, etc.).  
+## High-Level Concept Flow
+
+```mermaid
+flowchart TB
+    H[Data] --> I[Load Skill / Learn Skill]
+    I --> J[Create Tasks]
+    J --> K[Run Tasks]
+    K --> L[Structured Results]
+    L --> M[Downstream Steps]
+```
+---
+
+## Installation
+
+```bash
+pip install flashlearn
+```
+
+---
+
+## Learning a New “Skill” from Sample Data
+
+Like a fit/predict pattern, you can quickly “learn” a custom skill from minimal (or no!) data. Below, we’ll create a skill that evaluates the likelihood of buying a product from user comments on social media posts, returning a score (1–100) and a short reason. We’ll use a small dataset of comments and instruct the LLM to transform each comment according to our custom specification.
+
+```python
+from flashlearn.skills.learn_skill import LearnSkill
+from flashlearn.client import OpenAI
+
+# Instantiate your pipeline “estimator” or “transformer”
+learner = LearnSkill(model_name="gpt-4o-mini", client=OpenAI())
+data =  [
+    {"comment_text": "I love this product, it's everything I wanted!"},
+    {"comment_text": "Not impressed... wouldn't consider buying this."},
+    # ...
+]
+
+# Provide instructions and sample data for the new skill
+skill = learner.learn_skill(
+    data,
+    task=(
+        "Evaluate how likely the user is to buy my product based on the sentiment in their comment, "
+        "return an integer 1-100 on key 'likely_to_buy', "
+        "and a short explanation on key 'reason'."
+    ),
+)
+
+# Construct tasks for parallel execution (akin to batch prediction)
+skill.save("evaluate_buy_comments_skill.json")
+
+```
+
+---
+
+## Input Is a List of Dictionaries
+
+Whether you retrieved data from an API, a spreadsheet, or user-submitted forms, you can simply wrap each record into a dictionary. FlashLearn’s “skills” accept a list of such dictionaries, as shown below:
+
+```python
+user_inputs = [
+    {"comment_text": "I love this product, it's everything I wanted!"},
+    {"comment_text": "Not impressed... wouldn't consider buying this."},
+    # ...
+]
+```
+
+---
+
+## Run in 3 Lines of Code
+
+Once you’ve defined or learned a skill, you can load it as though it were a specialized transformer in a standard ML pipeline. Then apply it to your data in just a few lines:
+
+```python
+from flashlearn.skills.general_skill import GeneralSkill
+
+# Suppose we previously saved a learned skill to "evaluate_buy_comments_skill.json".
+skill = GeneralSkill.load_skill("evaluate_buy_comments_skill.json")
+
+tasks = skill.create_tasks(user_inputs)
+results = skill.run_tasks_in_parallel(tasks)
+print(results)
+```
+
+---
+
+## Get Structured Results
+
+FlashLearn returns structured outputs for each of your records. The keys in the results dictionary map to the indexes of your original list. For example:
+
+```json
+{
+  "0": {
+    "likely_to_buy": 90,
+    "reason": "Comment shows strong enthusiasm and positive sentiment."
+  },
+  "1": {
+    "likely_to_buy": 25,
+    "reason": "Expressed disappointment and reluctance to purchase."
+  }
+}
+```
+
+---
+
+## Pass on to Next Steps
+
+Each record’s output can then be used in downstream tasks. For instance, you might:
+
+1. Store the results in a database  
+2. Filter for high-likelihood leads  
+3. Send them to another tool for further analysis (for example, rewriting the “reason” in a formal tone)
+
+Below is a small example showing how you might parse the dictionary and feed it into a separate function:
+
+```python
+# Suppose 'flash_results' is the dictionary with structured LLM outputs
+for idx, result in flash_results.items():
+    desired_score = result["likely_to_buy"]
+    reason_text = result["reason"]
+    # Now do something with the score and reason, e.g., store in DB or pass to next step
+    print(f"Comment #{idx} => Score: {desired_score}, Reason: {reason_text}")
+```
+
+---
+
+## “Skill” Is Just a Simple Dictionary
+
+Internally, a skill is just a compact JSON-like object containing instructions and, optionally, function definitions to strictly validate LLM outputs. You can generate this skill from sample data (as shown above) or create it directly:
+
+```python
+EvaluateToBuySkill = {
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Evaluate how likely the user is to buy our product, returning an integer 1-100 and a short reason.",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "EvaluateToBuySkill",
+      "description": "Assess user text with respect to willingness to buy a certain product.",
+      "strict": True,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "likely_to_buy": {
+            "type": "integer",
+            "description": "A number from 1 to 100 indicating how likely the user is to buy."
+          },
+          "reason": {
+            "type": "string",
+            "description": "A brief explanation of why this is the likely score."
+          }
+        },
+        "required": ["likely_to_buy", "reason"],
+        "additionalProperties": False
+      }
+    }
+  }
+}
+```
+
+You can load or save this skill to JSON as needed, version it, share it, or plug it into your pipelines. FlashLearn makes the entire process—training, storing, loading, and using such custom LLM transformations—simple and uniform.
+
+--------------------------------------------------------------------------------
+## Single-Step Classification Using Prebuilt Skills
+Classic classification tasks are as straightforward as calling “fit_predict” on a ML estimator:
+• Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
+
+```python
+import os
+from openai import OpenAI
+from flashlearn.skills.classification import ClassificationSkill
+
+os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
+data = [{"message": "Where is my refund?"}, {"message": "My product was damaged!"}]
+
+skill = ClassificationSkill(
+    model_name="gpt-4o-mini",
+    client=OpenAI(),
+    categories=["billing","product issue"],
+    system_prompt="Classify the request."
+)
+
+tasks = skill.create_tasks(data)
+print(skill.run_tasks_in_parallel(tasks))
+```
+## Supported LLM Providers
+Anywhere you might rely on an ML pipeline component, you can swap in an LLM:
+```python
+client = OpenAI()  # This is equivalent to instantiating a pipeline component 
+deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepseek.com")
+lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
+```
+
+## Target audience
+- Anyone needing LLM-based data transformations at scale
+- Data scientists tired of building specialized models with insufficient data
 
 [![Support & Consulting](https://img.shields.io/badge/Support%20%26%20Consulting-Click%20Here-brightgreen)](https://calendly.com/flashlearn)
 
 ---
 
-## Key Features (Simplified)
+## Key Features 
 
 - **100% JSON Workflows**: Every response is valid JSON—machine-friendly from the start.  
 - **Scales Easily**: Concurrency and rate limiting for large-scale projects.  
@@ -87,7 +278,7 @@ FlashLearn is a Python library designed to ensure that every Large Language Mode
 - **LearnSkill**: Instant creation of classification/rewriting “skills” from sample data.  
 - **Batch or Real-Time**: Process live data, or batch thousands of tasks.  
 - **Cost Estimation**: Predict token expenditures before running large jobs.  
-- **Skill Library**: 200+ built-in skill definitions ([flashlearn/skills/toolkit](flashlearn/skills/toolkit)).  
+- **Skill Library**: 200+ built-in skill definitions ([docs](flashlearn/skills/toolkit)).  
 - **Multi-Modal**: Handle text, images, and more in consistent JSON pipelines.
 
 ## High-throughput
@@ -98,35 +289,6 @@ Process up to 999 tasks in 60 seconds on your local machine. For higher loads an
 Processing tasks in parallel: 100%|██████████| 999/999 [01:00<00:00, 16.38 it/s, In total: 368969, Out total: 17288]
 INFO:ParallelProcessor:All tasks complete. 999 succeeded, 0 failed.
 ```
-## High-Level Concept Flow
-
-1. Convert data rows into JSON tasks.  
-2. Apply a Skill (classification, rewriting, etc.).  
-3. LLM outputs guaranteed JSON.  
-4. (Optional) Store or chain the JSON results into your next step.
-
-```
-Dataset Rows → JSON Tasks → FlashLearn Skills + LLM → Guaranteed JSON → DB/Next Steps
-```
-
-With guaranteed JSON, there’s no need to parse unstructured text. You can immediately save each result to your database or pass it to another pipeline stage.
-
----
-
-## Installation
-
-1. Install via PyPI:  
-   ```bash
-   pip install flashlearn
-   ```
-
-2. Set up your LLM provider (OpenAI, DeepSeek, etc.):  
-   ```bash
-   export OPENAI_API_KEY="YOUR_API_KEY"
-   ```
-   Or define a `base_url` for an open-source endpoint.
-
----
 
 ## “All JSON, All the Time”: Example Classification Workflow
 
@@ -184,99 +346,6 @@ The output is consistently keyed by task ID (`"0"`, `"1"`, etc.), with the JSON 
 
 ## Use Cases & Real Examples
 
-### Discover & Classify Clusters
-1. **DiscoverLabelsSkill** automatically identifies emerging labels in text.  
-2. Feed the discovered labels into a standard classification skill.  
-3. Scale your labeling process quickly, with minimal human effort.
-
-### JSON Function Calls (GeneralSkill)
-Skills define JSON schemas so the LLM must respond in valid JSON. Examples include rewriting text in comedic form, extracting docstrings, or providing bullet-point lists.
-
-```python
-import json
-from flashlearn.skills import GeneralSkill
-from flashlearn.skills.toolkit import ClassifyDifficultyOfQuestion
-
-def main():
-    # Load a pre-defined skill from the toolkit
-    skill = GeneralSkill.load_skill(ClassifyDifficultyOfQuestion)
-    tasks = skill.create_tasks([{"text": "What is 12 squared?"}])
-    results = skill.run_tasks_in_parallel(tasks)
-    print(results)
-```
-
-Result is valid JSON like:
-```json
-{"difficulty": "easy"}
-```
-No disclaimers or random text—just structured data.
-[![Support & Consulting](https://img.shields.io/badge/Support%20%26%20Consulting-Click%20Here-brightgreen)](https://calendly.com/flashlearn)
-
-### Learning a New Skill from Sample Data
-If existing categories or rewrites don’t match your needs, create a new classification skill from examples—no model finetuning required.
-
-```python
-from flashlearn.skills.learn_skill import LearnSkill
-from flashlearn.utils import imdb_reviews_50k
-
-def main():
-    learner = LearnSkill(model_name="gpt-4o-mini")
-    data = imdb_reviews_50k(sample=100)
-
-    # Provide instructions and sample data for the new skill
-    skill = learner.learn_skill(
-        data,
-        task=(
-            'Based on data sample define 3 categories: satirical, quirky, absurd. '
-            'Return the category in the key "category".'
-        ),
-    )
-
-    tasks = skill.create_tasks(data)
-    results = skill.run_tasks_in_parallel(tasks)
-    print(results)
-```
-
----
-
-## Image Classification Example
-
-```python
-from flashlearn.skills.classification import ClassificationSkill
-
-def main():
-    images = [...]  # base64-encoded images
-    skill = ClassificationSkill(
-        model_name="gpt-4o-mini",
-        categories=["cat", "dog"],
-        system_prompt="Classify images as 'cat' or 'dog'."
-    )
-    column_modalities = {"image_base64": "image_base64"}
-    tasks = skill.create_tasks(images, column_modalities=column_modalities)
-    results = skill.run_tasks_in_parallel(tasks)
-    print(results)
-```
-
-You’ll have JSON results, e.g. `{"category": "cat"}` for each image, which you can export as `.jsonl` or pass to another system.
-[![Support & Consulting](https://img.shields.io/badge/Support%20%26%20Consulting-Click%20Here-brightgreen)](https://calendly.com/flashlearn)
-
----
-
-## How It Works
-
-### Skills
-A “Skill” encapsulates:  
-- Which LLM to call (OpenAI, local, or custom).  
-- System prompt or instructions.  
-- JSON schema or format constraints.  
-- Methods to parse the LLM response safely into JSON.
-
-### Tasks
-Each piece of data is a “Task,” which is turned into a JSON prompt for the LLM. When run in parallel, tasks are grouped into requests respecting concurrency limits.
-
-### All JSON, All the Time
-With FlashLearn, the LLM must output JSON. You’re never stuck parsing disclaimers, messy text, or swirling disclaimers. You can intercept and store partial or final results in JSON. This is critical for robust pipelines, especially when chaining multiple steps.
-
 ### Parallel Execution & Cost Estimation
 - **Parallel Execution**: `run_tasks_in_parallel` organizes concurrent requests to the LLM.  
 - **Cost Estimation**: Quickly preview your token usage:
@@ -284,10 +353,9 @@ With FlashLearn, the LLM must output JSON. You’re never stuck parsing disclaim
   cost_estimate = skill.estimate_tasks_cost(tasks)
   print("Estimated cost:", cost_estimate)
   ```
-
 ---
 
-## Loading & Customizing a Skill
+## Loading a Skill
 
 Here’s how the library handles comedic rewrites:
 
@@ -320,7 +388,7 @@ Everything is well-structured JSON, suitable for further analysis.
 - Licensed under MIT.  
 - [Fork us](flashlearn/) to add new skills, fix bugs, or create new examples.  
 - We aim to make robust LLM workflows accessible to all startups.  
-- All code needs at least **95%** tests coverage
+- All code needs at least **95%** test coverage
 - Explore the [examples folder](examples/) for more advanced usage patterns.
 
 ---
@@ -328,7 +396,7 @@ Everything is well-structured JSON, suitable for further analysis.
 ## License
 
 **MIT License**.  
-Use it in commercial products, personal projects.
+Use it in commercial products, and personal projects.
 
 ---
 

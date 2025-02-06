@@ -4,7 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40e52faa-2b0f-42a5-b2bb-50256ecc5c48" name="Changes" comment="" />
+    <list default="true" id="40e52faa-2b0f-42a5-b2bb-50256ecc5c48" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/examples/Customer service/classify_tickets.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/Finance/parse_financial_report_data.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/Marketing/customer_segmentation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/Personal asistant/research_assistant.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/Product intelligence/discover_trends_in_prodcut _reviews.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/Product intelligence/user_behaviour_analysis.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/Sales/personalized_emails.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/Sales/sentiment_classification.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/Software development/automated_pr_reviews.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.readthedocs.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/flashlearn-1.0.1-py3-none-any.whl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/flashlearn-1.0.1.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/examples/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/batch_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/batch_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/deepseek_inifinite_context.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/deepseek_inifinite_context.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/discover_and_classify_clusters.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/discover_and_classify_clusters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/discover_themes_in_product_reviews.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/discover_themes_in_product_reviews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/image_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/image_classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/learn_new_skill.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/learn_new_skill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/learn_new_skill_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/learn_new_skill_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/load_skill.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/load_skill.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/load_skill_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/load_skill_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/perplexity_clone.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/perplexity_clone.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/sentiment_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/sentiment_classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flashlearn.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/flashlearn.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flashlearn.egg-info/SOURCES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/flashlearn.egg-info/SOURCES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flashlearn/skills/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/flashlearn/skills/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flashlearn/skills/collect_all_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/flashlearn/skills/collect_all_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flashlearn/skills/toolkit/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/flashlearn/skills/toolkit/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flashlearn/skills/toolkit/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flashlearn/skills/toolkit/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +55,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gal45&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Pravko-Solutions/FlashLearn.git&quot;,
+    &quot;accountId&quot;: &quot;4bae36f4-6355-407e-9032-467db7179cea&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -73,8 +119,8 @@
     "Python.validate_json_files.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Gal/PycharmProjects/FlashLearn/examples/browser_use_price_matching",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Gal/PycharmProjects/FlashLearn/examples",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,18 +131,19 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\examples" />
       <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\examples\browser_use_price_matching" />
       <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\flashlearn\skills" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\flashlearn\skills\toolkit" />
-      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\examples" />
-      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\examples\code" />
-      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\flashlearn\core" />
+      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\examples\Code only examples" />
+      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\examples\Basic examples" />
       <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\flashlearn\skills" />
+      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\flashlearn\core" />
+      <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\flashlearn\skills\toolkit" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.perplexity_clone">
+  <component name="RunManager" selected="Python.collect_all_code">
     <configuration name="collect_all_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FlashLearn" />
       <option name="ENV_FILES" value="" />
@@ -134,7 +181,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/deepseek_inifinite_context.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Gal\PycharmProjects\FlashLearn\examples\Basic examples\deepseek_inifinite_context.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,7 +227,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Gal\PycharmProjects\FlashLearn\examples\perplexity_clone.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Gal\PycharmProjects\FlashLearn\examples\Code only examples\perplexity_clone.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -203,7 +250,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/sentiment_classification.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Gal\PycharmProjects\FlashLearn\examples\Basic examples\sentiment_classification.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.collect_all_code" />
         <item itemvalue="Python.perplexity_clone" />
         <item itemvalue="Python.deepseek_inifinite_context" />
         <item itemvalue="Python.sentiment_classification" />
         <item itemvalue="Python.integration_test" />
-        <item itemvalue="Python.collect_all_code" />
       </list>
     </recent_temporary>
   </component>
@@ -242,6 +289,9 @@
       <workItem from="1737382717281" duration="17603000" />
       <workItem from="1737461538382" duration="7472000" />
       <workItem from="1737534031859" duration="92442000" />
+      <workItem from="1738755327493" duration="3103000" />
+      <workItem from="1738837506580" duration="340000" />
+      <workItem from="1738852682781" duration="4028000" />
     </task>
     <servers />
   </component>
@@ -257,13 +307,13 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/examples/load_skill.py</url>
-          <line>25</line>
+          <url>file://$PROJECT_DIR$/examples/Code only examples/load_skill.py</url>
+          <line>22</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/examples/load_skill.py</url>
-          <line>22</line>
+          <url>file://$PROJECT_DIR$/examples/Code only examples/load_skill.py</url>
+          <line>19</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -337,7 +387,7 @@
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/examples/deepseek_inifinite_context.py</url>
+          <url>file://$PROJECT_DIR$/examples/Code only examples/deepseek_inifinite_context.py</url>
           <line>54</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
@@ -345,9 +395,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/FlashLearn$learn_new_skill.coverage" NAME="learn_new_skill Coverage Results" MODIFIED="1737658258068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/FlashLearn$generate_toolkit.coverage" NAME="generate_toolkit Coverage Results" MODIFIED="1737906508715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/FlashLearn$sentiment_classification.coverage" NAME="sentiment_classification Coverage Results" MODIFIED="1737984570172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/FlashLearn$generate_toolkit.coverage" NAME="generate_toolkit Coverage Results" MODIFIED="1737906508715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
+    <SUITE FILE_PATH="coverage/FlashLearn$learn_new_skill.coverage" NAME="learn_new_skill Coverage Results" MODIFIED="1737658258068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/FlashLearn$learn_new_skill_img.coverage" NAME="learn_new_skill_img Coverage Results" MODIFIED="1737658360873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/FlashLearn$integration_test.coverage" NAME="integration_test Coverage Results" MODIFIED="1737984377798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/tests" />
     <SUITE FILE_PATH="coverage/FlashLearn$validate_json_files.coverage" NAME="validate_json_files Coverage Results" MODIFIED="1737910044382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flashlearn/skills/toolkit" />
@@ -356,7 +406,7 @@
     <SUITE FILE_PATH="coverage/FlashLearn$load_skill.coverage" NAME="load_skill Coverage Results" MODIFIED="1737910534591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/FlashLearn$ecnecr.coverage" NAME="ecnecr Coverage Results" MODIFIED="1737918295599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/FlashLearn$deepseek_inifinite_context.coverage" NAME="deepseek_inifinite_context Coverage Results" MODIFIED="1738137644725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
-    <SUITE FILE_PATH="coverage/FlashLearn$collect_all_code.coverage" NAME="collect_all_code Coverage Results" MODIFIED="1737971656978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flashlearn/skills" />
+    <SUITE FILE_PATH="coverage/FlashLearn$collect_all_code.coverage" NAME="collect_all_code Coverage Results" MODIFIED="1738780250821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flashlearn/skills" />
     <SUITE FILE_PATH="coverage/FlashLearn$sentiment_classification__1_.coverage" NAME="sentiment_classification (1) Coverage Results" MODIFIED="1737554778033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />
     <SUITE FILE_PATH="coverage/FlashLearn$generate_toolkit__1_.coverage" NAME="generate_toolkit (1) Coverage Results" MODIFIED="1737907294931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flashlearn/skills/toolkit" />
     <SUITE FILE_PATH="coverage/FlashLearn$preplexity_clone.coverage" NAME="preplexity_clone Coverage Results" MODIFIED="1738146589732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples" />

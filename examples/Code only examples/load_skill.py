@@ -1,6 +1,3 @@
-import json
-import os
-
 from flashlearn.skills import GeneralSkill
 from flashlearn.skills.toolkit import ClassifyDifficultyOfQuestion
 from flashlearn.utils import imdb_reviews_50k

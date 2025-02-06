@@ -3,10 +3,30 @@
 
 FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min)** for incorporating **Agent LLMs** into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks—just like you’d do with any standard ML library—harnessing the power of LLMs under the hood.
 
-- Browser use agent for price matching [Example](/examples/browser_use_price_matching)  
-- Example boiler plate uses [Example](/examples)
-- Toolkits for advanced, prebuilt transformations: [click](/flashlearn/skills/toolkit)  
-- Customization options: [click](/flashlearn/skills/)  
+
+# Examples by use case
+- **Customer service**  
+  - [Classifying customer tickets](examples/customer_service/classify_tickets.md)
+
+- **Finance**  
+  - [Parse financial report data](examples/finance/parse_financial_report_data.md)
+
+- **Marketing**  
+  - [Customer segmentation](examples/marketing/customer_segmentation.md)
+
+- **Personal assistant**  
+  - [Research assistant](examples/personal_assistant/research_assistant.md)
+
+- **Product intelligence**  
+  - [Discover trends in product_reviews](examples/product_intelligence/discover_trends_in_product_reviews.md)  
+  - [User behaviour analysis](examples/product_intelligence/user_behaviour_analysis.md)
+
+- **Sales**  
+  - [Personalized cold emails](examples/sales/personalized_emails.md)  
+  - [Sentiment classification](examples/sales/sentiment_classification.md)
+
+- **Software development**  
+  - [Automated PR reviews.md](examples/software_development/automated_pr_reviews.md)
 
 ## High-Level Concept Flow
 
@@ -238,43 +258,45 @@ from flashlearn.skills.toolkit import ClassifyReviewSentiment
 import json
 import os
 
+
 def main():
-    os.environ["OPENAI_API_KEY"] = "API-KEY"
+  os.environ["OPENAI_API_KEY"] = "API-KEY"
 
-    # Step 1: Load or generate your data
-    data = imdb_reviews_50k(sample=100)  # 100 sample reviews
+  # Step 1: Load or generate your data
+  data = imdb_reviews_50k(sample=100)  # 100 sample reviews
 
-    # Step 2: Load JSON definition of skill in dict format
-    skill = GeneralSkill.load_skill(ClassifyReviewSentiment)
-        
-    # Step 3: Save skill definition in JSON for later loading
-    #skill.save("BinaryClassificationSkill.json")
-    
-    # Step 5: Convert data rows into JSON tasks
-    tasks = skill.create_tasks(data)
-    
-    # Step 6: Save results to a JSONL file and run now or later
-    with open('tasks.jsonl', 'w') as jsonl_file:
-        for entry in tasks:
-            jsonl_file.write(json.dumps(entry) + '\n')
-            
-    # Step 7: Run tasks (in parallel by default)
-    results = skill.run_tasks_in_parallel(tasks)
+  # Step 2: Load JSON definition of skill in dict format
+  skill = GeneralSkill.load_skill(ClassifyReviewSentiment)
 
-    # Step 8: Every output is strict JSON
-    # You can easily map results back to inputs
-    # e.g., store results as JSON Lines
-    with open('sentiment_results.jsonl', 'w') as f:
-        for task_id, output in results.items():
-            input_json = data[int(task_id)]
-            input_json['result'] = output
-            f.write(json.dumps(input_json) + '\n')
+  # Step 3: Save skill definition in JSON for later loading
+  # skill.save("BinaryClassificationSkill.json")
 
-    # Step 9: Inspect or chain the JSON results
-    print("Sample result:", results.get("0"))
+  # Step 5: Convert data rows into JSON tasks
+  tasks = skill.create_tasks(data)
+
+  # Step 6: Save results to a JSONL file and run now or later
+  with open('tasks.jsonl', 'w') as jsonl_file:
+    for entry in tasks:
+      jsonl_file.write(json.dumps(entry) + '\n')
+
+  # Step 7: Run tasks (in parallel by default)
+  results = skill.run_tasks_in_parallel(tasks)
+
+  # Step 8: Every output is strict JSON
+  # You can easily map results back to inputs
+  # e.g., store results as JSON Lines
+  with open('sentiment_results.jsonl', 'w') as f:
+    for task_id, output in results.items():
+      input_json = data[int(task_id)]
+      input_json['result'] = output
+      f.write(json.dumps(input_json) + '\n')
+
+  # Step 9: Inspect or chain the JSON results
+  print("Sample result:", results.get("0"))
+
 
 if __name__ == "__main__":
-    main()
+  main()
 ```
 
 The output is consistently keyed by task ID (`"0"`, `"1"`, etc.), with the JSON content that your pipeline can parse or store with no guesswork.
@@ -300,12 +322,13 @@ Here’s how the library handles comedic rewrites:
 from flashlearn.skills import GeneralSkill
 from flashlearn.skills.toolkit import HumorizeText
 
+
 def main():
-    data = [{"original_text": "We are behind schedule."}]
-    skill = GeneralSkill.load_skill(HumorizeText)
-    tasks = skill.create_tasks(data)
-    results = skill.run_tasks_in_parallel(tasks)
-    print(results)
+  data = [{"original_text": "We are behind schedule."}]
+  skill = GeneralSkill.load_skill(HumorizeText)
+  tasks = skill.create_tasks(data)
+  results = skill.run_tasks_in_parallel(tasks)
+  print(results)
 ```
 
 You’ll see output like:

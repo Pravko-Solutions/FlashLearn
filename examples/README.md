@@ -25,7 +25,7 @@ Below you’ll find an overview of each file, what it showcases, and links to th
 
 ---
 
-## 1. [batch_api.py](batch_api.py)
+## 1. [batch_api.py](Code only examples/batch_api.py)
 
 Demonstrates how to:
 1. Create classification tasks from a JSONL file.  
@@ -42,7 +42,7 @@ Use this script if you plan to handle large numbers of tasks asynchronously.
 
 ---
 
-## 2. [discover_and_classify_clusters.py](discover_and_classify_clusters.py)
+## 2. [discover_and_classify_clusters.py](Code only examples/discover_and_classify_clusters.py)
 
 Shows a two-tier approach using:
 1. **DiscoverLabelsSkill** – Automatically detect hidden or emergent labels in text data (like IMDB reviews).  
@@ -58,7 +58,7 @@ Ideal if you have unknown or fluid labels that you want the model to uncover bef
 
 ---
 
-## 3. [image_classification.py](image_classification.py)
+## 3. [image_classification.py](Code only examples/image_classification.py)
 
 Demonstrates image classification with a base64-encoded image column.  
 Steps shown in the script:
@@ -72,7 +72,7 @@ You can adapt this approach to any image classification scenario by tweaking the
 
 ---
 
-## 4. [learn_new_skill.py](learn_new_skill.py)
+## 4. [learn_new_skill.py](Code only examples/learn_new_skill.py)
 
 Showcases how to dynamically “learn” a new classification skill from sample data without fine-tuning the model.  
 Uses the `LearnSkill` class, which automates skill generation based on:
@@ -83,7 +83,7 @@ This is useful when you have a custom theme or specialized categories and want t
 
 ---
 
-## 5. [learn_new_skill_img.py](learn_new_skill_img.py)
+## 5. [learn_new_skill_img.py](Code only examples/learn_new_skill_img.py)
 
 Similar to “learn_new_skill.py,” but focused on images.  
 Steps:
@@ -97,7 +97,7 @@ Useful if your project needs dynamic or custom labeling for images—beyond stan
 
 ---
 
-## 6. [load_skill.py](load_skill.py)
+## 6. [load_skill.py](Code only examples/load_skill.py)
 
 Highlights loading a “predefined skill” from the FlashLearn library or a JSON file.  
 Key points:
@@ -108,7 +108,7 @@ Key points:
 
 ---
 
-## 7. [load_skill_img.py](load_skill_img.py)
+## 7. [load_skill_img.py](Code only examples/load_skill_img.py)
 
 A variant of “load_skill.py” for image tasks.  
 Steps:
@@ -121,7 +121,7 @@ Great if you have a saved skill configuration (e.g., “MyCustomSkillIMG.json”
 
 ---
 
-## 8. [sentiment_classification.py](sentiment_classification.py)
+## 8. [sentiment_classification.py](Code only examples/sentiment_classification.py)
 
 A complete walk-through on performing sentiment classification (e.g., “positive” or “negative”) on IMDB reviews in real time (not batch).  
 Showcases:

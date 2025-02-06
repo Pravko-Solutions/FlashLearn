@@ -16,9 +16,9 @@ To use any of these tasks:
 
 ```python
 from flashlearn.skills import GeneralSkill
-from flashlearn.skills.toolkit import <TaskName>
+from flashlearn.skills.toolkit import < TaskName >
 
-skill = GeneralSkill.load_skill(<TaskName>)
+skill = GeneralSkill.load_skill( < TaskName >)
 tasks = skill.create_tasks([{"text": "Your input text here..."}])
 results = skill.run_tasks_in_parallel(tasks)
 
@@ -2563,32 +2563,34 @@ Below is a generic usage example. You can substitute any of the above task class
 import os
 import json
 from flashlearn.skills import GeneralSkill
-from flashlearn.skills.toolkit import <TaskName>
+from flashlearn.skills.toolkit import < TaskName >
+
 
 def main():
-    # Optional: Provide your OpenAI key (or other LLM provider)
-    # os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
+  # Optional: Provide your OpenAI key (or other LLM provider)
+  # os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 
-    # Example data: A list of text documents
-    data = [
-        {"text": "This is a sample document. It needs rewriting or summarizing."},
-        {"text": "Another text block to process."}
-    ]
+  # Example data: A list of text documents
+  data = [
+    {"text": "This is a sample document. It needs rewriting or summarizing."},
+    {"text": "Another text block to process."}
+  ]
 
-    # Load the skill definition
-    skill = GeneralSkill.load_skill(<TaskName>)
+  # Load the skill definition
+  skill = GeneralSkill.load_skill( < TaskName >)
 
-    # Transform your data into tasks
-    tasks = skill.create_tasks(data)
+  # Transform your data into tasks
+  tasks = skill.create_tasks(data)
 
-    # Run tasks (parallels by default)
-    results = skill.run_tasks_in_parallel(tasks)
+  # Run tasks (parallels by default)
+  results = skill.run_tasks_in_parallel(tasks)
 
-    # Output is guaranteed JSON
-    print(json.dumps(results, indent=2))
+  # Output is guaranteed JSON
+  print(json.dumps(results, indent=2))
+
 
 if __name__ == "__main__":
-    main()
+  main()
 ```
 
 **All tasks follow a similar pattern**:  
