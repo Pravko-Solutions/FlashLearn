@@ -6,27 +6,27 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 
 # Examples by use case
 - **Customer service**  
-  - [Classifying customer tickets](examples/customer_service/classify_tickets.md)
+  - [Classifying customer tickets](examples/Customer service/classify_tickets.md)
 
 - **Finance**  
-  - [Parse financial report data](examples/finance/parse_financial_report_data.md)
+  - [Parse financial report data](examples/Finance/parse_financial_report_data.md)
 
 - **Marketing**  
-  - [Customer segmentation](examples/marketing/customer_segmentation.md)
+  - [Customer segmentation](examples/Marketing/customer_segmentation.md)
 
 - **Personal assistant**  
-  - [Research assistant](examples/personal_assistant/research_assistant.md)
+  - [Research assistant](examples/Personal assistant/research_assistant.md)
 
 - **Product intelligence**  
-  - [Discover trends in product_reviews](examples/product_intelligence/discover_trends_in_product_reviews.md)  
-  - [User behaviour analysis](examples/product_intelligence/user_behaviour_analysis.md)
+  - [Discover trends in product_reviews](examples/Product intelligence/discover_trends_in_product_reviews.md)  
+  - [User behaviour analysis](examples/Product intelligence/user_behaviour_analysis.md)
 
 - **Sales**  
-  - [Personalized cold emails](examples/sales/personalized_emails.md)  
-  - [Sentiment classification](examples/sales/sentiment_classification.md)
+  - [Personalized cold emails](examples/Sales/personalized_emails.md)  
+  - [Sentiment classification](examples/Sales/sentiment_classification.md)
 
 - **Software development**  
-  - [Automated PR reviews.md](examples/software_development/automated_pr_reviews.md)
+  - [Automated PR reviews.md](examples/Software development/automated_pr_reviews.md)
 
 ###  --> [Full Documentation](https://flashlearn.tech/index.php/docs/)
 
