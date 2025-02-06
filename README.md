@@ -28,7 +28,7 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 - **Software development**  
   - [Automated PR reviews.md](examples/software_development/automated_pr_reviews.md)
 
-###  -->[Full Documentation](https://flashlearn.tech/index.php/docs/)
+###  --> [Full Documentation](https://flashlearn.tech/index.php/docs/)
 
 ## Installation
 
