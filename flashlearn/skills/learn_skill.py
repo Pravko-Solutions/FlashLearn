@@ -106,6 +106,7 @@ class LearnSkill:
                     "4) Do not return any other text. Only return the final JSON for the function definition.\n\n"
                     "Remember:\n"
                     " • The 'strict' field must be true.\n"
+                    "You never provide min/max value ranges for INT and FLOAT fields.\n"
                     " • Your JSON must be well-formed and valid.\n"
                     " • Avoid including minItems, maxItems, or other constraints unless necessary.\n\n"
                     """ERROR:ParallelProcessor:Task 24 faced an unknown exception: litellm.BadRequestError: OpenAIException - Error code: 400 - {'error': {'message': "Invalid schema for function 'CategorizeReviews': In context=(), 'additionalProperties' is required to be supplied and to be false.", 'type': 'invalid_request_error', 'param': 'tools[0].function.parameters', 'code': 'invalid_function_parameters'}}"""
