@@ -162,8 +162,10 @@ Restore the skill from JSON for immediate usage.
 
 ```python
 from flashlearn.skills import GeneralSkill
-
-loaded_review_skill = GeneralSkill.load_skill(review_skill_path)
+review_skill_path = os.path.join(json_folder, "pr_review_skill.json")
+with open(review_skill_path, "r", encoding="utf-8") as file:
+    definition = json.load(file)
+loaded_review_skill = GeneralSkill.load_skill(definition)
 print("Step 4 complete: Skill loaded from JSON:", loaded_review_skill)
 ```
 
