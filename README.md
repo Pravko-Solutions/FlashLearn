@@ -105,8 +105,11 @@ Once you’ve defined or learned a skill, you can load it as though it were a sp
 ```python
 from flashlearn.skills.general_skill import GeneralSkill
 
+with open("evaluate_buy_comments_skill.json", "r", encoding="utf-8") as file:
+    definition= json.load(file)
+
 # Suppose we previously saved a learned skill to "evaluate_buy_comments_skill.json".
-skill = GeneralSkill.load_skill("evaluate_buy_comments_skill.json")
+skill = GeneralSkill.load_skill(definition)
 
 tasks = skill.create_tasks(user_inputs)
 results = skill.run_tasks_in_parallel(tasks)
