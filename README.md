@@ -15,7 +15,7 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
   - [Customer segmentation](examples/Marketing/customer_segmentation.md)
 
 - **Personal assistant** 
-  - [Research assistant](examples/Personal%20assistant/research_assistant.md)
+  - [Research assistant](examples/Personal%20asistant/research_assistant.md)
 
 - **Product intelligence** 
   - [Discover trends in product_reviews](examples/Product%20intelligence/discover_trends_in_product_reviews.md)
