@@ -1,5 +1,5 @@
 # Improve Customer Segmentation
-
+## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V
 ---
 
 ## Step 0: Imports and Environment Setup
