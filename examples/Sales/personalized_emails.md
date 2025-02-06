@@ -1,4 +1,5 @@
 # Generating Personalized Emails for Accounting AI Agent
+## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
 
 ---
 

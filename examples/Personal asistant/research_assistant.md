@@ -1,11 +1,8 @@
-Certainly! Below is the guide rewritten in perfect Markdown format.
+# Creating an Autonomous Research Assistant
+## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
 
 ---
-
-# Jupyter Notebook Tutorial: Creating an Autonomous Research Assistant
-
----
-
+# GPT MODELS CAN GENERATE AGENT CODE WITH THE BELOW PROMPT COPY AND PASTE IT IF YOU DO NOT WANT TO READ IT.
 ## Step 0: Environment Setup
 
 We import required libraries, load any environment variables (e.g., API keys from a .env file), and prepare a folder for JSON artifacts (optional).

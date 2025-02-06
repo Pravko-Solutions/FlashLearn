@@ -1,4 +1,5 @@
 # Automated PR Reviews
+## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
 
 ---
 

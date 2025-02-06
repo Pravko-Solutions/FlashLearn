@@ -1,5 +1,5 @@
 # Sentiment Classification
-
+## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
 ---
 
 ## Step 0: Imports and Environment Setup

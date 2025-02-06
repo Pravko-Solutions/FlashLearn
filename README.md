@@ -5,28 +5,28 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 
 
 # Examples by use case
-- **Customer service**  
-  - [Classifying customer tickets](examples/Customer service/classify_tickets.md)
+- **Customer service** 
+  - [Classifying customer tickets](examples/Customer%20service/classify_tickets.md)
 
-- **Finance**  
+- **Finance** 
   - [Parse financial report data](examples/Finance/parse_financial_report_data.md)
 
-- **Marketing**  
+- **Marketing** 
   - [Customer segmentation](examples/Marketing/customer_segmentation.md)
 
-- **Personal assistant**  
-  - [Research assistant](examples/Personal assistant/research_assistant.md)
+- **Personal assistant** 
+  - [Research assistant](examples/Personal%20asistant/research_assistant.md)
 
-- **Product intelligence**  
-  - [Discover trends in product_reviews](examples/Product intelligence/discover_trends_in_product_reviews.md)  
-  - [User behaviour analysis](examples/Product intelligence/user_behaviour_analysis.md)
+- **Product intelligence** 
+  - [Discover trends in product_reviews](examples/Product%20intelligence/discover_trends_in_prodcut%20_reviews.md)
+  - [User behaviour analysis](examples/Product%20intelligence/user_behaviour_analysis.md)
 
-- **Sales**  
-  - [Personalized cold emails](examples/Sales/personalized_emails.md)  
+- **Sales** 
+  - [Personalized cold emails](examples/Sales/personalized_emails.md)
   - [Sentiment classification](examples/Sales/sentiment_classification.md)
 
-- **Software development**  
-  - [Automated PR reviews.md](examples/Software development/automated_pr_reviews.md)
+- **Software development** 
+  - [Automated PR reviews](examples/Software%20development/automated_pr_reviews.md)
 
 ###  --> [Full Documentation](https://flashlearn.tech/index.php/docs/)
 
@@ -105,8 +105,11 @@ Once you’ve defined or learned a skill, you can load it as though it were a sp
 ```python
 from flashlearn.skills.general_skill import GeneralSkill
 
+with open("evaluate_buy_comments_skill.json", "r", encoding="utf-8") as file:
+    definition= json.load(file)
+
 # Suppose we previously saved a learned skill to "evaluate_buy_comments_skill.json".
-skill = GeneralSkill.load_skill("evaluate_buy_comments_skill.json")
+skill = GeneralSkill.load_skill(definition)
 
 tasks = skill.create_tasks(user_inputs)
 results = skill.run_tasks_in_parallel(tasks)
