@@ -126,7 +126,10 @@ We can load the skill whenever we want to run the extraction without re-learning
 We demonstrate how to restore the skill from the JSON file.
 
 ```python
-loaded_financial_skill = GeneralSkill.load_skill(financial_skill_path)
+financial_skill_path = os.path.join(json_folder, "financial_extraction_skill.json")
+with open(financial_skill_path, "r", encoding="utf-8") as file:
+    definition = json.load(file)
+loaded_financial_skill = GeneralSkill.load_skill(definition)
 print("Step 4 complete: Skill loaded from JSON:", loaded_financial_skill)
 ```
 
