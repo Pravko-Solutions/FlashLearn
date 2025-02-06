@@ -139,7 +139,7 @@ from flashlearn.skills import GeneralSkill
 skill_path = os.path.join(json_folder, "customer_service_classification_skill.json")
 with open(skill_path, "r", encoding="utf-8") as file:
     definition = json.load(file)
-loaded_classification_skill = GeneralSkill.load_skill(definiton)
+loaded_classification_skill = GeneralSkill.load_skill(definition)
 print("Step 5 complete: Skill loaded from JSON:", loaded_classification_skill)
 ```
 
