@@ -1,4 +1,5 @@
 # Creating an Autonomous Research Assistant
+<span style="color:red">This is red text</span>
 
 ---
 
