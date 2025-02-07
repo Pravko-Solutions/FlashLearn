@@ -1,8 +1,8 @@
 # Creating an Autonomous Research Assistant
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
+
+In this guide, we’ll build an autonomous “research assistant” that uses AI and a browser agent to search Google, visit sites, and capture text for further analysis. We’ll define and run tasks, then store final results with minimal manual effort—turning research into a breeze.
 
 ---
-# GPT MODELS CAN GENERATE AGENT CODE WITH THE BELOW PROMPT COPY AND PASTE IT IF YOU DO NOT WANT TO READ IT.
 ## Step 0: Environment Setup
 
 We import required libraries, load any environment variables (e.g., API keys from a .env file), and prepare a folder for JSON artifacts (optional).
