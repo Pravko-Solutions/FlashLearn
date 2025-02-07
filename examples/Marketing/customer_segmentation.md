@@ -1,7 +1,6 @@
 # Improve Customer Segmentation
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
 ---
-
+Want to quickly pinpoint which of your customers are “High-value,” “At-risk,” or “Occasional”? In this walkthrough, we’ll generate synthetic customer data, train an AI segmentation skill, and map each customer to the right category with a clear rational.
 ## Step 0: Imports and Environment Setup
 
 In this step, we import the necessary libraries, optionally set environment variables (like API keys), and prepare a folder for storing JSON artifacts (e.g., skills, tasks, final segmentation results).
