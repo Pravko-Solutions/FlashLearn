@@ -1,5 +1,7 @@
 # Generating Personalized Emails for Accounting AI Agent
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
+
+
+Need to send targeted emails that highlight how an AI can streamline accounting tasks? In this guide, we’ll walk through creating a personalized email generator that references each lead’s company, role, interests, and last contact.
 
 ---
 
