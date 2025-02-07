@@ -1,8 +1,4 @@
 # User Behavior Workflow
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
-
-## Introduction
-
 In this tutorial, we'll build an end-to-end AI workflow that:
 1. Analyzes user behavior (e.g., detecting churn risk, identifying power users).
 2. Automates task management based on insights (e.g., assigning tasks or follow-ups).
