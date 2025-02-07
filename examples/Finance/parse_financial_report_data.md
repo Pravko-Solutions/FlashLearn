@@ -1,6 +1,6 @@
 # Automated Financial Data Extraction
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V
 ---
+In this guide, we’ll walk through setting up an AI-driven workflow that reads a company’s yearly financial report and turns it into structured data. From building and saving a custom extraction skill to mapping the AI outputs back to your original documents, we’ll cover each step to get you from raw text to meaningful numbers—super fast.
 
 ## Step 0: Imports and Environment Setup
 
