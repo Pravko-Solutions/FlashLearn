@@ -1,5 +1,6 @@
 # Automated PR Reviews
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
+
+In this guide, we’ll show you how to set up an AI-powered review workflow that reads each PR’s title, description, and code diffs—then generates concise summaries and action items. This way, you can streamline your review process and catch potential errors before they land in production.
 
 ---
 
