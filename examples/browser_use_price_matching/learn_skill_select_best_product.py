@@ -13,7 +13,7 @@ def main():
     skill = learner.learn_skill(
         df=[],
         task='parse text input and select the most simmilar product to the query'
-             'return structured prduct infromation for best product on key name, price (float), short_description',
+             'return structured prduct information for best product on key name, price (float), short_description',
         model_name="gpt-4o-mini",
     )
 
