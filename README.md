@@ -3,11 +3,9 @@
 
 FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min)** for incorporating **Agent LLMs** into your typical workflows and ETL pipelines. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks, just like you’d do with any standard ML library, harnessing the power of LLMs under the hood. Each **step and task has a compact JSON definition** which makes pipelines simple to understand and maintain. It supports **LiteLLM**, **Ollama**, **OpenAI**, **DeepSeek**, and all other OpenAI-compatible clients.
 
-###  --> [Examples](https://github.com/Pravko-Solutions/FlashLearn/tree/main/examples)
-###  --> [Full Documentation](https://flashlearn.tech/index.php/docs/)
-
-### Get in touch
-[📅 Book a time with founders](https://calendly.com/flashlearn)
+### 🚀 [Examples](https://github.com/Pravko-Solutions/FlashLearn/tree/main/examples)  
+### 📖 [Full Documentation](https://flashlearn.tech/index.php/docs/)  
+### 📅 [Book a Meeting](https://calendly.com/flashlearn)  
 
 ## Installation
 
