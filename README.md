@@ -5,7 +5,6 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 
 ### 🚀 [Examples](https://github.com/Pravko-Solutions/FlashLearn/tree/main/examples)  
 ### 📖 [Full Documentation](https://flashlearn.tech/index.php/docs/)  
-### 📅 [Book a Meeting](https://calendly.com/flashlearn)  
 
 ## Installation
 
