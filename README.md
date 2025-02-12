@@ -6,10 +6,8 @@ FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min
 ###  --> [Examples](https://github.com/Pravko-Solutions/FlashLearn/tree/main/examples)
 ###  --> [Full Documentation](https://flashlearn.tech/index.php/docs/)
 
-<!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/flashlearn" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
+### Get in touch
+[📅 Book a time with founders](https://calendly.com/flashlearn)
 
 ## Installation
 
