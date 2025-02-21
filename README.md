@@ -39,7 +39,7 @@ Like a fit/predict pattern, you can quickly “learn” a custom skill. Below, w
 
 ```python
 from flashlearn.skills.learn_skill import LearnSkill
-from flashlearn.client import OpenAI
+from openai import OpenAI
 
 # Instantiate your pipeline “estimator” or “transformer”
 learner = LearnSkill(model_name="gpt-4o-mini", client=OpenAI())
