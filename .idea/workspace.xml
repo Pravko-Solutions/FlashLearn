@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="40e52faa-2b0f-42a5-b2bb-50256ecc5c48" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/Code only examples/discover_themes_in_product_reviews.py" beforeDir="false" afterPath="$PROJECT_DIR$/examples/Code only examples/discover_themes_in_product_reviews.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flashlearn.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/flashlearn.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,60 +46,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_base_data_skill.TestBaseDataSkill.executor": "Run",
-    "Python tests.Python tests for test_base_skill.test_estimate_tasks_cost.executor": "Run",
-    "Python tests.Python tests for test_base_skill.test_run_tasks_in_parallel.executor": "Run",
-    "Python tests.Python tests for test_classification.test_create_tasks_inherits_behavior.executor": "Run",
-    "Python tests.Python tests for test_demo_data.test_cats_and_dogs.executor": "Run",
-    "Python tests.Python tests for test_flash_client.test_flash_lite_llm_client_init.executor": "Run",
-    "Python tests.Python tests for test_general_skill.test_create_tasks_using_self_columns.executor": "Run",
-    "Python tests.Python tests for test_logging_utils.test_setup_logger.executor": "Run",
-    "Python tests.Python tests for test_orchestration.test_parallel_process_no_hang.executor": "Run",
-    "Python tests.Python tests for test_orchestration.test_process_tasks_in_parallel_rate_limit.executor": "Run",
-    "Python tests.Python tests for test_orchestration.test_process_tasks_in_parallel_success.executor": "Debug",
-    "Python tests.Python tests for test_orchestration.test_your_parallel_process_ok.executor": "Run",
-    "Python tests.Python tests in test_base_skill.py.executor": "Run",
-    "Python tests.Python tests in test_classification.py.executor": "Run",
-    "Python tests.Python tests in test_demo_data.py.executor": "Run",
-    "Python tests.Python tests in test_discover_labels.py.executor": "Run",
-    "Python tests.Python tests in test_general_skill.py.executor": "Run",
-    "Python tests.Python tests in test_learn_skill.py.executor": "Run",
-    "Python tests.Python tests in test_orchestration.py.executor": "Run",
-    "Python.__init__.executor": "Debug",
-    "Python.collect_all_code.executor": "Run",
-    "Python.deepseek_inifinite_context.executor": "Run",
-    "Python.discover_and_classify_clusters.executor": "Run",
-    "Python.discover_and_classsify_clusters_img.executor": "Run",
-    "Python.ecnecr.executor": "Run",
-    "Python.examples.executor": "Run",
-    "Python.generate_init.executor": "Run",
-    "Python.generate_toolkit (1).executor": "Run",
-    "Python.generate_toolkit.executor": "Debug",
-    "Python.image_classification.executor": "Run",
-    "Python.integration_test.executor": "Run",
-    "Python.learn_new_image_skill.executor": "Run",
-    "Python.learn_new_skill.executor": "Run",
-    "Python.learn_new_skill_img.executor": "Run",
-    "Python.load_skill.executor": "Run",
-    "Python.load_skill_img.executor": "Run",
-    "Python.preplexity_clone.executor": "Run",
-    "Python.sentiment_classification (1).executor": "Run",
-    "Python.sentiment_classification.executor": "Run",
-    "Python.validate_json_files.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Gal/PycharmProjects/FlashLearn/examples",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_base_data_skill.TestBaseDataSkill.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_base_skill.test_estimate_tasks_cost.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_base_skill.test_run_tasks_in_parallel.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_classification.test_create_tasks_inherits_behavior.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_demo_data.test_cats_and_dogs.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_flash_client.test_flash_lite_llm_client_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_general_skill.test_create_tasks_using_self_columns.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_logging_utils.test_setup_logger.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_orchestration.test_parallel_process_no_hang.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_orchestration.test_process_tasks_in_parallel_rate_limit.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_orchestration.test_process_tasks_in_parallel_success.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_orchestration.test_your_parallel_process_ok.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_base_skill.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_classification.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_demo_data.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_discover_labels.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_general_skill.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_learn_skill.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_orchestration.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.collect_all_code.executor&quot;: &quot;Run&quot;,
+    &quot;Python.deepseek_inifinite_context.executor&quot;: &quot;Run&quot;,
+    &quot;Python.discover_and_classify_clusters.executor&quot;: &quot;Run&quot;,
+    &quot;Python.discover_and_classsify_clusters_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ecnecr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.examples.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_init.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_toolkit (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_toolkit.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.image_classification.executor&quot;: &quot;Run&quot;,
+    &quot;Python.integration_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.learn_new_image_skill.executor&quot;: &quot;Run&quot;,
+    &quot;Python.learn_new_skill.executor&quot;: &quot;Run&quot;,
+    &quot;Python.learn_new_skill_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.load_skill.executor&quot;: &quot;Run&quot;,
+    &quot;Python.load_skill_img.executor&quot;: &quot;Run&quot;,
+    &quot;Python.preplexity_clone.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sentiment_classification (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.sentiment_classification.executor&quot;: &quot;Run&quot;,
+    &quot;Python.validate_json_files.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gal/PycharmProjects/FlashLearn/examples&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Gal\PycharmProjects\FlashLearn\examples" />
@@ -259,7 +262,14 @@
       <workItem from="1737534031859" duration="92442000" />
       <workItem from="1738755327493" duration="3103000" />
       <workItem from="1738837506580" duration="340000" />
-      <workItem from="1738852682781" duration="6711000" />
+      <workItem from="1738852682781" duration="7633000" />
+      <workItem from="1738928872431" duration="587000" />
+      <workItem from="1739374422776" duration="5146000" />
+      <workItem from="1739442469820" duration="1471000" />
+      <workItem from="1739460212379" duration="241000" />
+      <workItem from="1739884756154" duration="1718000" />
+      <workItem from="1739985794677" duration="82000" />
+      <workItem from="1740058266378" duration="74000" />
     </task>
     <servers />
   </component>
@@ -316,37 +326,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/flashlearn/skills/learn_skill.py</url>
-          <line>252</line>
+          <line>253</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/flashlearn/skills/learn_skill.py</url>
-          <line>300</line>
+          <line>301</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/flashlearn/skills/learn_skill.py</url>
-          <line>299</line>
+          <line>300</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/flashlearn/skills/learn_skill.py</url>
-          <line>257</line>
+          <line>258</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/flashlearn/skills/learn_skill.py</url>
-          <line>258</line>
+          <line>259</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/flashlearn/skills/learn_skill.py</url>
-          <line>266</line>
+          <line>267</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/flashlearn/skills/learn_skill.py</url>
-          <line>262</line>
+          <line>263</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

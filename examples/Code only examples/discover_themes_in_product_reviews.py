@@ -33,7 +33,7 @@ def main():
 
     discover_skill = DiscoverLabelsSkill(model_name="gpt-4o-mini", client=OpenAI())
 
-    column_modalities={"image_base64":"image_base64", "comment": "text"}
+    column_modalities={"image":"image_base64", "comment": "text"}
 
     tasks_discover = discover_skill.create_tasks(text_reviews + image_reviews)
 

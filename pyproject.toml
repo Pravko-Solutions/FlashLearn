@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "flashlearn"
-version = "1.0.2"
+version = "1.0.3"
 description = "Never train another ML model again"
 readme = "README.md"  # Points to your README file
 authors = [

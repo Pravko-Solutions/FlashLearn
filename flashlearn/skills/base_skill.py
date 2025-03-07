@@ -80,7 +80,7 @@ class BaseSkill(ABC):
             max_attempts=2,
             token_encoding_name="cl100k_base",
             return_results=True,
-            request_timeout=5,
+            request_timeout=60,
     ):
         """
         Orchestrates tasks in parallel using process_tasks_in_parallel.
