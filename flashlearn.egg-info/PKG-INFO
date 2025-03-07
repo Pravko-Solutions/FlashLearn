@@ -1,7 +1,7 @@
 Metadata-Version: 2.2
 Name: flashlearn
-Version: 1.0.3
-Summary: Never train another ML model again
+Version: 1.0.4
+Summary: Agents made simple
 Author-email: Gal Giacomelli <info@clerkly.co>
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
