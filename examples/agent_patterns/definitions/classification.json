@@ -1,0 +1,28 @@
+{
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "SentimentClassifier",
+      "description": "Classifies a given review into positive or negative sentiment.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "enum": [
+              "positive",
+              "negative"
+            ]
+          }
+        },
+        "required": [
+          "label"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

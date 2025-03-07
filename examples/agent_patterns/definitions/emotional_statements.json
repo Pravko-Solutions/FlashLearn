@@ -1,0 +1,27 @@
+{
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "ExtractEmotionalStatements",
+      "description": "Extract key emotional statements from given text reviews, returning the results in a structured JSON format.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "emotional_statements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "emotional_statements"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

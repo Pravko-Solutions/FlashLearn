@@ -1,0 +1,24 @@
+{
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "SummarizeEmotions",
+      "description": "This function summarizes the emotions expressed in a series of reviews",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "emotional_summary": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "emotional_summary"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

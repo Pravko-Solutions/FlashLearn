@@ -1,0 +1,32 @@
+{
+  "skill_class": "GeneralSkill",
+  "system_prompt": "Exactly populate the provided function definition",
+  "function_definition": {
+    "type": "function",
+    "function": {
+      "name": "CategorizeReviews",
+      "description": "Categorizes movie reviews as positive or negative and provides an explanation for the sentiment determination.",
+      "strict": true,
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "sentiment": {
+            "type": "string",
+            "enum": [
+              "positive",
+              "negative"
+            ]
+          },
+          "explanation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sentiment",
+          "explanation"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
