@@ -1,5 +1,6 @@
 # Automated PR Reviews
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
+
+In this guide, we’ll show you how to set up an AI-powered review workflow that reads each PR’s title, description, and code diffs—then generates concise summaries and action items. This way, you can streamline your review process and catch potential errors before they land in production.
 
 ---
 
@@ -162,8 +163,10 @@ Restore the skill from JSON for immediate usage.
 
 ```python
 from flashlearn.skills import GeneralSkill
-
-loaded_review_skill = GeneralSkill.load_skill(review_skill_path)
+review_skill_path = os.path.join(json_folder, "pr_review_skill.json")
+with open(review_skill_path, "r", encoding="utf-8") as file:
+    definition = json.load(file)
+loaded_review_skill = GeneralSkill.load_skill(definition)
 print("Step 4 complete: Skill loaded from JSON:", loaded_review_skill)
 ```
 

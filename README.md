@@ -1,34 +1,10 @@
 # Flash Learn - Agents made simple
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  ![Pure Python](https://img.shields.io/badge/Python-Pure-blue)  ![Test Coverage](https://img.shields.io/badge/Coverage-95%25-brightgreen) ![Code Size](https://img.shields.io/github/languages/code-size/Pravko-Solutions/FlashLearn)
 
-FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min)** for incorporating **Agent LLMs** into your typical workflows. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks, just like you’d do with any standard ML library, harnessing the power of LLMs under the hood. Each **step and task has a compact JSON definition** which makes pipelines simple to understand and maintain. It supports **LiteLLM**, **Ollama**, **OpenAI**, **DeepSeek**, and all other OpenAI-compatible clients.
+FlashLearn provides a simple interface and orchestration **(up to 1000 calls/min)** for incorporating **Agent LLMs** into your typical workflows and ETL pipelines. Conduct data transformations, classifications, summarizations, rewriting, and custom multi-step tasks, just like you’d do with any standard ML library, harnessing the power of LLMs under the hood. Each **step and task has a compact JSON definition** which makes pipelines simple to understand and maintain. It supports **LiteLLM**, **Ollama**, **OpenAI**, **DeepSeek**, and all other OpenAI-compatible clients.
 
-
-# Examples by use case
-- **Customer service** 
-  - [Classifying customer tickets](examples/Customer%20service/classify_tickets.md)
-
-- **Finance** 
-  - [Parse financial report data](examples/Finance/parse_financial_report_data.md)
-
-- **Marketing** 
-  - [Customer segmentation](examples/Marketing/customer_segmentation.md)
-
-- **Personal assistant** 
-  - [Research assistant](examples/Personal%20asistant/research_assistant.md)
-
-- **Product intelligence** 
-  - [Discover trends in product_reviews](examples/Product%20intelligence/discover_trends_in_prodcut%20_reviews.md)
-  - [User behaviour analysis](examples/Product%20intelligence/user_behaviour_analysis.md)
-
-- **Sales** 
-  - [Personalized cold emails](examples/Sales/personalized_emails.md)
-  - [Sentiment classification](examples/Sales/sentiment_classification.md)
-
-- **Software development** 
-  - [Automated PR reviews](examples/Software%20development/automated_pr_reviews.md)
-
-###  --> [Full Documentation](https://flashlearn.tech/index.php/docs/)
+### 🚀 [Examples](https://github.com/Pravko-Solutions/FlashLearn/tree/main/examples)  
+### 📖 [Full Documentation](https://flashlearn.tech/index.php/docs/)  
 
 ## Installation
 
@@ -63,7 +39,7 @@ Like a fit/predict pattern, you can quickly “learn” a custom skill. Below, w
 
 ```python
 from flashlearn.skills.learn_skill import LearnSkill
-from flashlearn.client import OpenAI
+from openai import OpenAI
 
 # Instantiate your pipeline “estimator” or “transformer”
 learner = LearnSkill(model_name="gpt-4o-mini", client=OpenAI())
@@ -164,6 +140,34 @@ deep_seek = OpenAI(api_key='YOUR DEEPSEEK API KEY', base_url="https://api.deepse
 lite_llm = FlashLiteLLMClient()  # LiteLLM integration Manages keys as environment variables, akin to a top-level pipeline manager
 ollama =  OpenAI(base_url = 'http://localhost:11434/v1', api_key='ollama', # required, but unused) # Just use ollama's openai client
 ```
+### KEY IDEA: JSON in, JSON out
+
+# Examples by use case
+- **Customer service** 
+  - [Classifying customer tickets](examples/Customer%20service/classify_tickets.md)
+
+- **Finance** 
+  - [Parse financial report data](examples/Finance/parse_financial_report_data.md)
+
+- **Marketing** 
+  - [Customer segmentation](examples/Marketing/customer_segmentation.md)
+
+- **Personal assistant** 
+  - [Research assistant](examples/Personal%20asistant/research_assistant.md)
+
+- **Product intelligence** 
+  - [Discover trends in product_reviews](examples/Product%20intelligence/discover_trends_in_prodcut%20_reviews.md)
+  - [User behaviour analysis](examples/Product%20intelligence/user_behaviour_analysis.md)
+
+- **Sales** 
+  - [Personalized cold emails](examples/Sales/personalized_emails.md)
+  - [Sentiment classification](examples/Sales/sentiment_classification.md)
+
+- **Software development** 
+  - [Automated PR reviews](examples/Software%20development/automated_pr_reviews.md)
+
+###  --> [Full Documentation](https://flashlearn.tech/index.php/docs/)
+
 # Customization
 
 ## “All JSON, All the Time”: Example Classification Workflow

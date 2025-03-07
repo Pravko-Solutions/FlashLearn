@@ -1,8 +1,4 @@
 # User Behavior Workflow
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
-
-## Introduction
-
 In this tutorial, we'll build an end-to-end AI workflow that:
 1. Analyzes user behavior (e.g., detecting churn risk, identifying power users).
 2. Automates task management based on insights (e.g., assigning tasks or follow-ups).
@@ -118,8 +114,10 @@ To demonstrate reusability, let's load the skill from the JSON file we just save
 
 ```python
 # Step 4: Load the Skill
-
-loaded_skill = GeneralSkill.load_skill(skill_path)
+skill_path = os.path.join(json_folder, "user_behavior_analysis_skill.json")
+with open(skill_path, "r", encoding="utf-8") as file:
+    definition = json.load(file)
+loaded_skill = GeneralSkill.load_skill(definition)
 print("Skill loaded from JSON:", loaded_skill)
 ```
 

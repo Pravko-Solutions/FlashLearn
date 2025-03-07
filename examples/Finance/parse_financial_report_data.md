@@ -1,6 +1,6 @@
 # Automated Financial Data Extraction
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V
 ---
+In this guide, we’ll walk through setting up an AI-driven workflow that reads a company’s yearly financial report and turns it into structured data. From building and saving a custom extraction skill to mapping the AI outputs back to your original documents, we’ll cover each step to get you from raw text to meaningful numbers.
 
 ## Step 0: Imports and Environment Setup
 
@@ -126,7 +126,10 @@ We can load the skill whenever we want to run the extraction without re-learning
 We demonstrate how to restore the skill from the JSON file.
 
 ```python
-loaded_financial_skill = GeneralSkill.load_skill(financial_skill_path)
+financial_skill_path = os.path.join(json_folder, "financial_extraction_skill.json")
+with open(financial_skill_path, "r", encoding="utf-8") as file:
+    definition = json.load(file)
+loaded_financial_skill = GeneralSkill.load_skill(definition)
 print("Step 4 complete: Skill loaded from JSON:", loaded_financial_skill)
 ```
 

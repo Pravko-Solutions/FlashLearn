@@ -1,7 +1,6 @@
 # Improve Customer Segmentation
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
 ---
-
+Want to quickly pinpoint which of your customers are “High-value,” “At-risk,” or “Occasional”? In this walkthrough, we’ll generate synthetic customer data, train an AI segmentation skill, and map each customer to the right category with a clear rational.
 ## Step 0: Imports and Environment Setup
 
 In this step, we import the necessary libraries, optionally set environment variables (like API keys), and prepare a folder for storing JSON artifacts (e.g., skills, tasks, final segmentation results).
@@ -133,7 +132,10 @@ To actually perform segmentation in the future, we can load the skill from the J
 We restore the skill from JSON for use in processing data.
 
 ```python
-loaded_segmentation_skill = GeneralSkill.load_skill(segmentation_skill_path)
+segmentation_skill_path = os.path.join(json_folder, "customer_segmentation_skill.json")
+with open(segmentation_skill_path, "r", encoding="utf-8") as file:
+    definition = json.load(file)
+loaded_segmentation_skill = GeneralSkill.load_skill(definition)
 print("Step 4 complete: Skill loaded from JSON:", loaded_segmentation_skill)
 ```
 

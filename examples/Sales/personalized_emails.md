@@ -1,5 +1,7 @@
 # Generating Personalized Emails for Accounting AI Agent
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
+
+
+Need to send targeted emails that highlight how an AI can streamline accounting tasks? In this guide, we’ll walk through creating a personalized email generator that references each lead’s company, role, interests, and last contact.
 
 ---
 
@@ -142,7 +144,10 @@ When we want to generate emails in a production or separate environment, we simp
 We restore the skill from JSON and ensure it’s ready to generate personalized emails.
 
 ```python
-loaded_email_skill = GeneralSkill.load_skill(email_skill_path)
+email_skill_path = os.path.join(json_folder, "accounting_email_skill.json")
+with open(email_skill_path, "r", encoding="utf-8") as file:
+    definition = json.load(file)
+loaded_email_skill = GeneralSkill.load_skill(definition)
 print("Step 4 complete: Skill loaded from JSON:", loaded_email_skill)
 ```
 

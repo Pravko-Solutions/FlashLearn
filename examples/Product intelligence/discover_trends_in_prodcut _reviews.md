@@ -1,5 +1,7 @@
 # Discovering Themes in Product Reviews
-## Pro tip: Ctrl + C -> ChatGPT -> Ctrl + V -> Describe your problem-> Get your code
+
+In this guide, we’ll show how to automatically discover labels or categories, then classify each review at scale. This saves time and helps uncover hidden insights in your feedback data quickly.
+
 ---
 
 ## Step 0: Imports and Environment Setup
